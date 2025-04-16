@@ -1,0 +1,142 @@
+:root {
+  /* Light theme variables */
+  --notify-bold-color-bg: #ffffff;
+  --notify-bold-color-text: #111111;
+
+  --notify-bold-success: #4caf50;
+  --notify-bold-error: #f44336;
+  --notify-bold-warning: #ff9800;
+  --notify-bold-info: #2196f3;
+  --notify-bold-default: #9e9e9e;
+
+  --notify-bold-confirm-bg: var(--notify-bold-success);
+  --notify-bold-cancel-bg: var(--notify-bold-error);
+}
+
+.notify-bold-theme-dark {
+  --notify-bold-color-bg: #1e1e1e;
+  --notify-bold-color-text: #f9f9f9;
+}
+
+/* Overlay */
+.notify-bold-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.notify-bold-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal container */
+.notify-bold-modal {
+  background: var(--notify-bold-color-bg);
+  color: var(--notify-bold-color-text);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Size variants */
+.notify-bold-xs {
+  max-width: 300px;
+}
+.notify-bold-sm {
+  max-width: 400px;
+}
+.notify-bold-md {
+  max-width: 500px;
+}
+.notify-bold-lg {
+  max-width: 600px;
+}
+
+/* Status border indicators */
+.notify-bold-success {
+  border-left: 5px solid var(--notify-bold-success);
+}
+.notify-bold-error {
+  border-left: 5px solid var(--notify-bold-error);
+}
+.notify-bold-warning {
+  border-left: 5px solid var(--notify-bold-warning);
+}
+.notify-bold-info {
+  border-left: 5px solid var(--notify-bold-info);
+}
+.notify-bold-default {
+  border-left: 5px solid var(--notify-bold-default);
+}
+
+/* Header */
+.notify-bold-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.notify-bold-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.notify-bold-icon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+
+.notify-bold-cancel-icon {
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: #888;
+}
+
+/* Message */
+.notify-bold-message {
+  margin-bottom: 1rem;
+}
+
+/* Button Container */
+.notify-bold-button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Buttons */
+.notify-bold-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.notify-bold-confirm {
+  background-color: var(--notify-bold-confirm-bg);
+  color: #fff;
+}
+
+.notify-bold-cancel {
+  background-color: var(--notify-bold-cancel-bg);
+  color: #fff;
+}
