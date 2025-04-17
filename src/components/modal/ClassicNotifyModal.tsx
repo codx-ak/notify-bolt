@@ -1,5 +1,6 @@
 import { NotifyModalProps } from "../../types/notify.types";
-import styles from "../../style/classicModal.module.css";
+import IconClose from "../../assets/CloseIcon";
+import ModalIcon from "../common/ModalIcon";
 
 const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
   const {
@@ -17,57 +18,85 @@ const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
     cancelIcon,
     style,
     themeMode,
-    // allowOutsideClick,
+    variant,
+    allowOutsideClick,
     resolve,
     reject,
   } = modal;
 
   // Handles the modal dismiss logic when clicking close
-  const handleClose = () => modal.reject?.("dismiss");
-
-  const statusClass =
-    styles[`notify-bold-${status}`] || styles["notify-bold-default"];
-  const sizeClass = styles[`notify-bold-${size}`] || styles["notify-bold-sm"];
-  const themeClass =
-    themeMode === "dark" ? styles["notify-bold-theme-dark"] : "";
+  const handleClose = () => (allowOutsideClick ? reject?.("dismiss") : null);
 
   return (
     <div
-      className={`${styles["notify-bold-overlay"]} ${open ? styles.open : ""}`}
+      className={`notify-modal-overlay ${open ? "open" : ""}`}
       onClick={handleClose}
+      style={style?.overlay ?? {}}
     >
       <div
-        className={`${styles["notify-bold-modal"]} ${statusClass} ${sizeClass} ${themeClass}`}
+        className={`notify-modal-container notify-modal-${size} ${
+          themeMode == "dark" ? "notify-theme-dark" : ""
+        }`}
         style={style?.modal ?? {}}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div className={styles["notify-bold-header"]}>
-          <div className={styles["notify-bold-title"]}>
-            {icon && <span className={styles["notify-bold-icon"]}>{icon}</span>}
+        {/* ================== Header Section ================== */}
+        <div className={"notify-modal-header"} style={style?.modalHeader ?? {}}>
+          {/* Modal Title */}
+          <div
+            className={"notify-classic-modal-title"}
+            style={style?.title ?? {}}
+          >
             {title}
           </div>
+
+          {/* Close Icon */}
           {showCancelIcon && (
-            <span
-              className={styles["notify-bold-cancel-icon"]}
+            <div
+              className={"notify-modal-cancel-icon"}
               onClick={() => reject?.("dismiss")}
+              aria-label="Close"
             >
-              {cancelIcon || "×"}
-            </span>
+              {cancelIcon ?? <IconClose />}
+            </div>
           )}
         </div>
-        <div className={styles["notify-bold-message"]}>{message}</div>
-        <div className={styles["notify-bold-button-container"]}>
+
+        {/* ================== Icon Section ================== */}
+        <ModalIcon
+          icon={icon}
+          status={status}
+          style={style?.icon ?? {}}
+          variant={variant}
+        />
+
+        {/* ================== Message Section ================== */}
+        <p
+          className={"notify-classic-modal-message"}
+          style={style?.message ?? {}}
+        >
+          {message}
+        </p>
+
+        {/* ================== Action Buttons ================== */}
+        <div
+          className={"notify-classic-modal-button-container"}
+          style={style?.buttonContainer ?? {}}
+        >
           {showCancelButton && (
             <button
-              className={`${styles["notify-bold-button"]} ${styles["notify-bold-cancel"]}`}
+              className={`notify-modal-button notify-modal-cancel`}
               onClick={() => reject?.("dismiss")}
+              style={style?.button ?? {}}
             >
               {cancelButtonText}
             </button>
           )}
           {showConfirmButton && (
             <button
-              className={`${styles["notify-bold-button"]} ${styles["notify-bold-confirm"]}`}
+              className={`notify-modal-button notify-modal-confirm`}
               onClick={() => resolve?.("confirm")}
+              style={style?.button ?? {}}
             >
               {confirmButtonText}
             </button>

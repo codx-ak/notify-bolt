@@ -32,8 +32,7 @@ export default [
         tsconfig: "./tsconfig.json",
       }),
       postcss({
-        extract: true,
-        modules: true,
+        extract: false,
         minimize: true,
       }),
       terser(), // Optional minification

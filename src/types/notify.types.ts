@@ -9,7 +9,7 @@ type NotifyThemeMode = "light" | "dark";
  * Visual variants for the modal layout.
  * Future expansion can add more variants beyond 'classic'.
  */
-type NotifyModalVariant = "classic";
+export type NotifyModalVariant = "classic";
 
 /**
  * Modal size options.

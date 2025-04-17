@@ -1,0 +1,94 @@
+/* Overlay */
+.notify-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--notify-overlay-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999999;
+}
+
+.notify-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal container */
+.notify-modal-container {
+  font-family: "Poppins", sans-serif;
+  background: var(--notify-bg-color);
+  color: var(--notify-text-primary);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px var(--notify-shadow);
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Size variants */
+.notify-modal-xs {
+  max-width: 300px;
+}
+.notify-modal-sm {
+  max-width: 400px;
+}
+.notify-modal-md {
+  max-width: 500px;
+}
+.notify-modal-lg {
+  max-width: 600px;
+}
+
+/* Header */
+.notify-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.notify-modal-cancel-icon {
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--notify-icon-bg);
+  color: var(--notify-text-secondary);
+  border-radius: 50%;
+}
+
+/* Buttons */
+.notify-modal-button {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  border: none;
+  min-width: 100px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.notify-modal-button:focus {
+  border: none;
+  outline: none;
+}
+
+.notify-modal-confirm {
+  background-color: var(--notify-color-success);
+  color: var(--notify-text-white);
+}
+
+.notify-modal-cancel {
+  background-color: var(--notify-button-bg);
+  color: var(--notify-button-text);
+}
+.notify-modal-cancel:hover {
+  background-color: var(--notify-divider-color);
+}

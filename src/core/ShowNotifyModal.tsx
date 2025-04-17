@@ -50,6 +50,7 @@ export const showNotifyModal = (
                 title: props.title || "",
                 message: props.message || "",
                 status: props.status || "default",
+                variant: "classic",
                 size: props.size || defaults.defaultSize || "sm",
                 icon: props.icon ?? null,
                 showConfirmButton: props.showConfirmButton ?? false,
