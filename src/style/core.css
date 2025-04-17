@@ -28,7 +28,112 @@
   box-shadow: 0 5px 20px var(--notify-shadow);
   width: 100%;
   position: relative;
-  transition: all 0.3s ease;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+  animation-duration: 0.4s;
+}
+
+/* Slide up (from bottom) */
+.slide-up {
+  animation-name: notify-slide-up;
+}
+@keyframes notify-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide down (from top) */
+.slide-down {
+  animation-name: notify-slide-down;
+}
+@keyframes notify-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from left */
+.slide-left {
+  animation-name: notify-slide-left;
+}
+@keyframes notify-slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+.slide-right {
+  animation-name: notify-slide-right;
+}
+@keyframes notify-slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*  Fade In  */
+.fade {
+  animation-name: notify-fade;
+}
+@keyframes notify-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*  Zoom in  */
+.zoom-in {
+  animation-name: notify-zoom-in;
+}
+@keyframes notify-zoom-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*  Zoom Out  */
+.zoom-out {
+  animation-name: notify-zoom-out;
+}
+@keyframes notify-zoom-out {
+  0% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Size variants */
@@ -80,7 +185,23 @@
   outline: none;
 }
 
-.notify-modal-confirm {
+.notify-modal-confirm-success {
+  background-color: var(--notify-color-success);
+  color: var(--notify-text-white);
+}
+.notify-modal-confirm-error {
+  background-color: var(--notify-color-error);
+  color: var(--notify-text-white);
+}
+.notify-modal-confirm-info {
+  background-color: var(--notify-color-info);
+  color: var(--notify-text-white);
+}
+.notify-modal-confirm-warning {
+  background-color: var(--notify-color-warning);
+  color: var(--notify-text-white);
+}
+.notify-modal-confirm-default {
   background-color: var(--notify-color-success);
   color: var(--notify-text-white);
 }

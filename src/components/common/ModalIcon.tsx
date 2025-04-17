@@ -1,23 +1,25 @@
 import React from "react";
 import { NotifyModalVariant, NotifyStatusType } from "../../types/notify.types";
-import { SuccessIcon } from "../../assets/SuccessIcon";
-import { ErrorIcon } from "../../assets/ErrorIcon";
-import { InfoIcon } from "../../assets/InfoIcon";
-import { WarningIcon } from "../../assets/WarningIcon";
-import { DefaultIcon } from "../../assets/DefaultIcon";
+import {
+  ClassicSuccessIcon,
+  ClassicDefaultIcon,
+  ClassicErrorIcon,
+  ClassicInfoIcon,
+  ClassicWarningIcon,
+} from "../../assets/ClassicIcons";
 
-const getDefaultIcon = (status: NotifyStatusType) => {
+const getClassicDefaultIcon = (status: NotifyStatusType) => {
   switch (status) {
     case "success":
-      return <SuccessIcon />;
+      return <ClassicSuccessIcon />;
     case "error":
-      return <ErrorIcon />;
+      return <ClassicErrorIcon />;
     case "info":
-      return <InfoIcon />;
+      return <ClassicInfoIcon />;
     case "warning":
-      return <WarningIcon />;
+      return <ClassicWarningIcon />;
     default:
-      return <DefaultIcon />;
+      return <ClassicDefaultIcon />;
   }
 };
 
@@ -41,7 +43,10 @@ const ModalIcon: React.FC<ModalIconProps> = ({
 
   // Case 1: No icon provided – use default icon based on modal status
   if (!icon) {
-    const defaultIcon = getDefaultIcon(status); // Get default icon (string path or JSX)
+    const defaultIcon =
+      variant == "classic"
+        ? getClassicDefaultIcon(status)
+        : getClassicDefaultIcon(status); // Get default icon (string path or JSX)
 
     return (
       <div className={containerStyle} style={{ ...style }}>

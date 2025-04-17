@@ -58,6 +58,7 @@ export const showNotifyModal = (
                 showCancelButton: props.showCancelButton ?? false,
                 cancelButtonText: props.cancelButtonText ?? "Cancel",
                 showCancelIcon: props.showCancelIcon ?? true,
+                animation: props.animation ?? "slide-up",
                 cancelIcon: props.cancelIcon ?? null,
                 style: { ...defaults.style, ...props.style },
                 themeMode: props.themeMode || "light",

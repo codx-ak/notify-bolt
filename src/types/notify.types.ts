@@ -11,6 +11,16 @@ type NotifyThemeMode = "light" | "dark";
  */
 export type NotifyModalVariant = "classic";
 
+// animations for modal
+type NotifyModalAnimation =
+  | "fade"
+  | "slide-up"
+  | "slide-down"
+  | "slide-left"
+  | "slide-right"
+  | "zoom-in"
+  | "zoom-out";
+
 /**
  * Modal size options.
  */
@@ -64,6 +74,7 @@ export interface NotifyModalProps extends NotifyGlobalConfigProps {
   icon?: React.ReactNode | string | null;
   showConfirmButton?: boolean;
   confirmButtonText?: string;
+  animation?: NotifyModalAnimation;
   showCancelButton?: boolean;
   cancelButtonText?: string;
   variant?: NotifyModalVariant;

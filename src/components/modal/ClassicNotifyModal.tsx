@@ -20,6 +20,7 @@ const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
     themeMode,
     variant,
     allowOutsideClick,
+    animation,
     resolve,
     reject,
   } = modal;
@@ -34,7 +35,7 @@ const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
       style={style?.overlay ?? {}}
     >
       <div
-        className={`notify-modal-container notify-modal-${size} ${
+        className={`notify-modal-container notify-modal-${size} ${animation} ${
           themeMode == "dark" ? "notify-theme-dark" : ""
         }`}
         style={style?.modal ?? {}}
@@ -94,7 +95,7 @@ const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
           )}
           {showConfirmButton && (
             <button
-              className={`notify-modal-button notify-modal-confirm`}
+              className={`notify-modal-button notify-modal-confirm-${status}`}
               onClick={() => resolve?.("confirm")}
               style={style?.button ?? {}}
             >
