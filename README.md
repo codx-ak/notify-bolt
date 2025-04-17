@@ -63,23 +63,24 @@ const handleClick = () => {
 
 ## 🔄 Available Props
 
-| Prop                | Type                                                       | Default     | Description                                  |
-| ------------------- | ---------------------------------------------------------- | ----------- | -------------------------------------------- |
-| `title`             | `string`                                                   | `""`        | Modal title text                             |
-| `message`           | `string`                                                   | `""`        | Content message shown inside the modal       |
-| `status`            | `"success"`, `"error"`, `"warning"`, `"info"`, `"default"` | `"default"` | Status type (controls icon and color)        |
-| `variant`           | `"classic"`                                                | `"classic"` | Visual layout style of the modal             |
-| `size`              | `"xs"`, `"sm"`, `"md"`, `"lg"`                             | `"sm"`      | Modal size                                   |
-| `icon`              | `React.ReactNode`                                          | `null`      | Optional custom icon override                |
-| `showConfirmButton` | `boolean`                                                  | `false`     | Whether to display the confirm button        |
-| `confirmButtonText` | `string`                                                   | `"Okay"`    | Label for the confirm button                 |
-| `showCancelButton`  | `boolean`                                                  | `false`     | Whether to display the cancel button         |
-| `cancelButtonText`  | `string`                                                   | `"Cancel"`  | Label for the cancel button                  |
-| `showCancelIcon`    | `boolean`                                                  | `true`      | Show cancel (X) icon in the modal header     |
-| `cancelIcon`        | `React.ReactNode`                                          | `null`      | Custom cancel icon                           |
-| `style`             | `Object`                                                   | `{}`        | Style overrides for different modal sections |
-| `themeMode`         | `"light"`, `"dark"`                                        | `"light"`   | Theme mode of the modal                      |
-| `allowOutsideClick` | `boolean`                                                  | `false`     | Whether clicking outside                     |
+| Prop                | Type                                                                                              | Default     | Description                                  |
+| ------------------- | ------------------------------------------------------------------------------------------------- | ----------- | -------------------------------------------- |
+| `title`             | `string`                                                                                          | `""`        | Modal title text                             |
+| `message`           | `string`                                                                                          | `""`        | Content message shown inside the modal       |
+| `status`            | `"success"`, `"error"`, `"warning"`, `"info"`, `"default"`                                        | `"default"` | Status type (controls icon and color)        |
+| `variant`           | `"classic"`                                                                                       | `"classic"` | Visual layout style of the modal             |
+| `size`              | `"xs"`, `"sm"`, `"md"`, `"lg"`                                                                    | `"sm"`      | Modal size                                   |
+| `icon`              | `React.ReactNode`                                                                                 | `null`      | Optional custom icon override                |
+| `showConfirmButton` | `boolean`                                                                                         | `false`     | Whether to display the confirm button        |
+| `confirmButtonText` | `string`                                                                                          | `"Okay"`    | Label for the confirm button                 |
+| `showCancelButton`  | `boolean`                                                                                         | `false`     | Whether to display the cancel button         |
+| `cancelButtonText`  | `string`                                                                                          | `"Cancel"`  | Label for the cancel button                  |
+| `showCancelIcon`    | `boolean`                                                                                         | `true`      | Show cancel (X) icon in the modal header     |
+| `cancelIcon`        | `React.ReactNode`                                                                                 | `null`      | Custom cancel icon                           |
+| `style`             | `Object`                                                                                          | `{}`        | Style overrides for different modal sections |
+| `themeMode`         | `"light"`, `"dark"`                                                                               | `"light"`   | Theme mode of the modal                      |
+| `allowOutsideClick` | `boolean`                                                                                         | `false`     | Whether clicking outside                     |
+| `animation`         | `"slide-up"`, `"slide-down"`, `"slide-left"`, `"slide-right"`,`"zoom-in"`, `"zoom-out"`,`"fade"`, | `slide-up`  | Alert Modal animations                       |
 
 ---
 
