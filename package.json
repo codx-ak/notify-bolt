@@ -1,7 +1,7 @@
 {
   "name": "notify-bolt",
   "version": "1.0.0",
-  "description": "A React package for custom alerts and toast notifications.",
+  "description": "A customizable React alert and modal system with theme support, multiple variants, and global configuration.",
   "author": "Ak Moorthi",
   "license": "MIT",
   "main": "dist/index.cjs.js",
@@ -54,16 +54,18 @@
     "react-notification",
     "alert",
     "toast",
-    "react-smart-modal",
+    "react-smart-alerts",
     "notify",
     "notify-bolt",
+    "swal",
+    "sweet-alert",
     "notification",
     "bolt",
     "custom-alerts"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/codx-ak/notify-bolt.git"
+    "url": "git+https://github.com/codx-ak/notify-bolt.git"
   },
   "bugs": {
     "url": "https://github.com/codx-ak/notify-bolt/issues"
