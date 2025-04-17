@@ -1,18 +1,42 @@
 # 📦 Changelog
 
-## `v1.0.0` — _Apr 17, 2025_
+## `v1.1.0` — _Apr 17, 2025_
 
-### ✨ Initial Release
+### 🚀 New Features
 
-- ✅ **Classic Modal Variant**: Built-in support for a clean, styled "classic" modal layout.
-- 🎨 **Theme Support**: Light and dark modes via CSS variables.
-- 🛠️ **Custom Styles Support**: Allows passing custom styles for overlay, header, buttons, etc.
-- ⚙️ **Global Defaults**: Configure default modal behavior using global settings.
+- 🖼️ **Classic Modal Icons**  
+  Introduced themed icon variants (`success`, `error`, `info`, `warning`, `default`) with consistent styling.
 
-## `v1.0.1` - _Apr 17, 2025_
+- 🎞️ **Icon Animations**  
+  Added entry animations for icons — includes line drawing, checkmarks, crossmarks, and pulsing effects.
+
+- 💫 **Modal Animations**  
+  Modals now include smooth animated transitions for entry and exit, enhancing visual polish.
+
+---
+
+## `v1.0.1` — _Apr 17, 2025_
 
 ### 🔧 Maintenance & Improvements
 
 - Minor updates and optimizations.
 - Improved configuration consistency.
 - Prepared for future feature support.
+
+---
+
+## `v1.0.0` — _Apr 17, 2025_
+
+### ✨ Initial Release
+
+- ✅ **Classic Modal Variant**  
+  Built-in support for a clean, styled "classic" modal layout.
+
+- 🎨 **Theme Support**  
+  Light and dark modes via CSS variables.
+
+- 🛠️ **Custom Styles Support**  
+  Allows passing custom styles for overlay, header, buttons, etc.
+
+- ⚙️ **Global Defaults**  
+  Configure default modal behavior using global settings.
