@@ -1,5 +1,5 @@
 {
-  "name": "notify-bold",
+  "name": "notify-bolt",
   "version": "1.0.0",
   "description": "A React package for custom alerts and toast notifications.",
   "author": "Ak Moorthi",
@@ -56,9 +56,9 @@
     "toast",
     "react-smart-modal",
     "notify",
-    "notify-bold",
+    "notify-bolt",
     "notification",
-    "bold",
+    "bolt",
     "custom-alerts"
   ],
   "repository": {

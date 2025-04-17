@@ -41,7 +41,7 @@ interface NotifyModalStyle {
 }
 
 /**
- * Global configuration options shared across all notify-bold modals.
+ * Global configuration options shared across all notify-bolt modals.
  */
 export interface NotifyGlobalConfigProps {
   themeMode?: NotifyThemeMode;

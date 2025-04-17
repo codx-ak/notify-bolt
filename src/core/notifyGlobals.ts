@@ -11,13 +11,13 @@ let notifyModalDefaults: NotifyGlobalConfigProps = {
 };
 
 /**
- * Get the current global defaults for notify-bold modals
+ * Get the current global defaults for notify-bolt modals
  */
 export const getNotifyModalDefaults = (): NotifyGlobalConfigProps =>
   notifyModalDefaults;
 
 /**
- * Set or update global defaults for notify-bold modals
+ * Set or update global defaults for notify-bolt modals
  * @param config Partial config to override defaults
  */
 export const setNotifyModalDefaults = (
