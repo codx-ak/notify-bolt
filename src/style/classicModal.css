@@ -5,6 +5,14 @@
   color: var(--notify-text-primary);
 }
 
+/* Header */
+.notify-classic-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .notify-classic-modal-icon-container {
   display: flex;
   justify-content: center;

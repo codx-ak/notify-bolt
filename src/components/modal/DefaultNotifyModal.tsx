@@ -2,7 +2,7 @@ import { NotifyModalProps } from "../../types/notify.types";
 import IconClose from "../../assets/CloseIcon";
 import ModalIcon from "../common/ModalIcon";
 
-const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
+const DefaultNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
   const {
     open,
     title,
@@ -43,17 +43,9 @@ const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
       >
         {/* ================== Header Section ================== */}
         <div
-          className={"notify-classic-modal-header"}
+          className={"notify-default-modal-header"}
           style={style?.modalHeader ?? {}}
         >
-          {/* Modal Title */}
-          <div
-            className={"notify-classic-modal-title"}
-            style={style?.title ?? {}}
-          >
-            {title}
-          </div>
-
           {/* Close Icon */}
           {showCancelIcon && (
             <div
@@ -74,9 +66,16 @@ const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
           variant={variant}
         />
 
+        {/* Modal Title */}
+        <div
+          className={"notify-default-modal-title"}
+          style={style?.title ?? {}}
+        >
+          {title}
+        </div>
         {/* ================== Message Section ================== */}
         <p
-          className={"notify-classic-modal-message"}
+          className={"notify-default-modal-message"}
           style={style?.message ?? {}}
         >
           {message}
@@ -84,7 +83,7 @@ const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
 
         {/* ================== Action Buttons ================== */}
         <div
-          className={"notify-classic-modal-button-container"}
+          className={"notify-default-modal-button-container"}
           style={style?.buttonContainer ?? {}}
         >
           {showCancelButton && (
@@ -111,4 +110,4 @@ const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
   );
 };
 
-export default ClassicNotifyModal;
+export default DefaultNotifyModal;

@@ -8,6 +8,14 @@ import {
   ClassicWarningIcon,
 } from "../../assets/ClassicIcons";
 
+// Props interface for ModalIcon component
+interface ModalIconProps {
+  icon?: React.ReactNode | string | null;
+  status: NotifyStatusType;
+  style?: React.CSSProperties;
+  variant?: NotifyModalVariant;
+}
+
 const getClassicDefaultIcon = (status: NotifyStatusType) => {
   switch (status) {
     case "success":
@@ -23,14 +31,6 @@ const getClassicDefaultIcon = (status: NotifyStatusType) => {
   }
 };
 
-// Props interface for ModalIcon component
-interface ModalIconProps {
-  icon?: React.ReactNode | string | null;
-  status: NotifyStatusType;
-  style?: React.CSSProperties;
-  variant?: NotifyModalVariant;
-}
-
 const ModalIcon: React.FC<ModalIconProps> = ({
   icon,
   status,
@@ -39,7 +39,9 @@ const ModalIcon: React.FC<ModalIconProps> = ({
 }) => {
   // Container style using Flexbox to center the icon horizontally and vertically
   const containerStyle =
-    variant == "classic" ? "notify-classic-modal-icon-container" : "";
+    variant == "classic"
+      ? "notify-classic-modal-icon-container"
+      : "notify-default-modal-icon-container";
 
   // Case 1: No icon provided – use default icon based on modal status
   if (!icon) {

@@ -150,13 +150,6 @@
   max-width: 600px;
 }
 
-/* Header */
-.notify-modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
 .notify-modal-cancel-icon {
   cursor: pointer;
   padding: 0.3rem;

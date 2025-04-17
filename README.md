@@ -16,7 +16,7 @@ A lightweight and themeable modal alert system for React, built with customizati
 - 🎨 Customizable styles and colors
 - 🌗 Light/Dark mode support
 - ⚡ Zero Dependencies
-- 💡 Built-in variants: `classic`
+- 💡 Built-in variants: `classic`,`default`
 - ⚙️ Global default settings
 
 ---
@@ -68,7 +68,7 @@ const handleClick = () => {
 | `title`             | `string`                                                                                          | `""`        | Modal title text                             |
 | `message`           | `string`                                                                                          | `""`        | Content message shown inside the modal       |
 | `status`            | `"success"`, `"error"`, `"warning"`, `"info"`, `"default"`                                        | `"default"` | Status type (controls icon and color)        |
-| `variant`           | `"classic"`                                                                                       | `"classic"` | Visual layout style of the modal             |
+| `variant`           | `"classic"` ,`"default"`                                                                          | `"classic"` | Visual layout style of the modal             |
 | `size`              | `"xs"`, `"sm"`, `"md"`, `"lg"`                                                                    | `"sm"`      | Modal size                                   |
 | `icon`              | `React.ReactNode`                                                                                 | `null`      | Optional custom icon override                |
 | `showConfirmButton` | `boolean`                                                                                         | `false`     | Whether to display the confirm button        |

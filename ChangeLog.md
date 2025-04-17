@@ -1,5 +1,20 @@
 # 📦 Changelog
 
+## `v2.0.0` — _Apr 17, 2025_
+
+### 🚀 Major Update
+
+- 🆕 **New Default Modal Variant**  
+  Introduced a new variant under the default modal type for expanded flexibility and improved UX out-of-the-box.
+
+- 🧠 **Improved Modal Architecture**  
+  Refactored internal structure to better support multiple variants with more scalable logic.
+
+- ♻️ **Breaking Changes**  
+  Default behavior may change slightly depending on usage — review updated docs or migration notes if you customized default variants.
+
+---
+
 ## `v1.1.0` — _Apr 17, 2025_
 
 ### 🚀 New Features

@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { NotifyModalProps } from "../types/notify.types";
 import { getNotifyModalDefaults } from "./notifyGlobals";
 import ClassicNotifyModal from "../components/modal/ClassicNotifyModal";
+import DefaultNotifyModal from "../components/modal/DefaultNotifyModal";
 
 // Variable to store the DOM container for the modal
 let container: HTMLDivElement | null = null;
@@ -71,7 +72,32 @@ export const showNotifyModal = (
           );
 
         default:
-          return null;
+          return (
+            <DefaultNotifyModal
+              modal={{
+                open: true,
+                title: props.title || "",
+                message: props.message || "",
+                status: props.status || "default",
+                variant: "default",
+                size: props.size || defaults.defaultSize || "sm",
+                icon: props.icon ?? null,
+                showConfirmButton: props.showConfirmButton ?? true,
+                confirmButtonText: props.confirmButtonText ?? "Okay",
+                showCancelButton: props.showCancelButton ?? true,
+                cancelButtonText: props.cancelButtonText ?? "Cancel",
+                showCancelIcon: props.showCancelIcon ?? false,
+                animation: props.animation ?? "slide-up",
+                cancelIcon: props.cancelIcon ?? null,
+                style: { ...defaults.style, ...props.style },
+                themeMode: props.themeMode || "light",
+                allowOutsideClick:
+                  props.allowOutsideClick ?? defaults.allowOutsideClick,
+                resolve: () => handleClose("confirm"),
+                reject: () => handleClose("dismiss"),
+              }}
+            />
+          );
       }
     };
 
