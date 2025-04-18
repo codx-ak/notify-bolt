@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { showNotifyModal, NotifyModalProps } from "notify-bolt";
-import { MdFindInPage } from "react-icons/md";
+import Prism from "prismjs";
 
 const PlaygroundSection = () => {
   const [options, setOptions] = useState<Partial<NotifyModalProps>>({
     title: "Testing",
-    message: "This is a test message to demonstrate how the modal works.",
+    message: "This is a test message!",
     allowOutsideClick: true,
     animation: "slide-up",
     size: "sm",
@@ -15,6 +15,9 @@ const PlaygroundSection = () => {
     variant: "classic",
   });
 
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [options]);
   return (
     <section className="playground-section">
       <h2 className="playground-heading">🧪 Playground</h2>
@@ -26,7 +29,7 @@ const PlaygroundSection = () => {
       {/* Status Section */}
       <div className="playground-row">
         <div className="playground-options">
-          <h3>🎨 Variant</h3>
+          <h3>📦 Variant</h3>
           <div className="button-group">
             {["classic", "default"].map((type) => (
               <button
@@ -64,7 +67,7 @@ const PlaygroundSection = () => {
             ))}
           </div>
 
-          <h3>🎨 Size</h3>
+          <h3>📐 Size</h3>
           <div className="button-group">
             {["xs", "sm", "md", "lg"].map((type) => (
               <button
@@ -84,7 +87,7 @@ const PlaygroundSection = () => {
           <h3>🌓 Theme Mode</h3>
           <div className="toggle-group">
             <label className="switch-label">
-              <span>light mode</span>
+              <span>light </span>
               <input
                 type="checkbox"
                 checked={options.themeMode === "dark"}
@@ -96,18 +99,18 @@ const PlaygroundSection = () => {
                 }
               />
               <span className="switch-slider"></span>
-              <span>dark mode</span>
+              <span>dark </span>
             </label>
           </div>
 
-          <h3>✅ Animation</h3>
+          <h3>⭐ Animation</h3>
           <div className="button-group">
             {[
-              "fade",
               "slide-up",
               "slide-down",
               "slide-left",
               "slide-right",
+              "fade",
               "zoom-in",
               "zoom-out",
             ].map((type) => (
@@ -128,29 +131,30 @@ const PlaygroundSection = () => {
 
         <div>
           <div className="playground-code">
-            <h4>Code</h4>
-            <pre className="code-block">
+            <h4>📌 Example Code</h4>
+            <pre className="code-block" style={{ textAlign: "start" }}>
               <code className="language-javascript">{`
-    showNotifyModal({
-      title: ${options.title},
-      message: ${options.message},
-      variant: ${options.variant},
-      themeMode: ${options.themeMode},
-      status: ${options.status},
-      allowOutsideClick: ${options.allowOutsideClick},
-      animation: ${options.animation},
-      size: ${options.size},
-      showCancelIcon: ${options.showCancelIcon},
-    })`}</code>
+  showNotifyModal({
+    title: ${options.title},
+    message: ${options.message},
+    variant: ${options.variant},
+    themeMode: ${options.themeMode},
+    status: ${options.status},
+    allowOutsideClick: ${options.allowOutsideClick},
+    animation: ${options.animation},
+    size: ${options.size},
+    showCancelIcon: ${options.showCancelIcon},
+  })
+`}</code>
             </pre>
-          </div>
-          <div style={{ textAlign: "center", marginTop: "2rem" }}>
-            <button
-              className="btn primary"
-              onClick={() => showNotifyModal(options)}
-            >
-              <MdFindInPage /> Preview Modal
-            </button>
+            <div style={{ textAlign: "center", marginTop: "2rem" }}>
+              <button
+                className="btn primary"
+                onClick={() => showNotifyModal(options)}
+              >
+                Preview Modal
+              </button>
+            </div>
           </div>
         </div>
       </div>

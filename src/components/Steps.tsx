@@ -6,7 +6,7 @@ const SetupSection = () => {
     showNotifyModal({
       title: "Delete this item?",
       message: "This action is permanent. Do you wish to proceed?",
-      variant: "classic",
+      variant: "default",
       themeMode: "light",
       status: "warning",
     });
@@ -33,11 +33,10 @@ const SetupSection = () => {
         <pre className="code-block">
           <code className="language-javascript">{`import { useNotify } from 'notify-bolt';
 
-
 useNotify({
     title: "Delete this item?",
     message: "This action is permanent. Do you wish to proceed?",
-    variant: "classic",
+    variant: "default",
     themeMode: "light",
     status: "warning",
   })
