@@ -1,5 +1,11 @@
 # 📦 Changelog
 
+## `v2.1.0` - _Apr 18, 2025_
+
+### Changed
+
+- Updated `peerDependencies` to support React 17, 18, and 19.
+
 ## `v2.0.0` — _Apr 17, 2025_
 
 ### 🚀 Major Update
