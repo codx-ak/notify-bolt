@@ -290,6 +290,11 @@ body {
   padding-bottom: 2rem;
 }
 
+@media (max-width: 768px) {
+  .playground-row {
+    grid-template-columns: 1fr;
+  }
+}
 .playground-options h3 {
   font-size: 1rem;
   margin-bottom: 1rem;
