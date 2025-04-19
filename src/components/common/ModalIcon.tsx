@@ -57,7 +57,7 @@ const getClassicDefaultIcon = (
     case "warning":
       return <ClassicWarningIcon background={backgroundColor} color={color} />;
     case "default":
-      return <ClassicWarningIcon background={backgroundColor} color={color} />;
+      return <ClassicDefaultIcon background={backgroundColor} color={color} />;
     default:
       return <ClassicDefaultIcon background={backgroundColor} color={color} />;
   }

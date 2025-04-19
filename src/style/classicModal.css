@@ -129,19 +129,23 @@
 }
 
 /* Line Path Animation */
-.classic-default-icon__line-path,
+
 .classic-info-icon__line-vertical,
-.classic-info-icon__line-horizontal {
+.classic-info-icon__line-horizontal,
+.classic-warning-icon__line-vertical,
+.classic-warning-icon__line-horizontal {
   stroke-dasharray: 48;
   stroke-dashoffset: 48;
   animation: drawLine 1s ease forwards;
 }
 
-.classic-info-icon__line-horizontal {
+.classic-info-icon__line-horizontal,
+.classic-warning-icon__line-horizontal {
   animation-delay: 0.2s;
 }
 
-.classic-info-icon__line-vertical {
+.classic-info-icon__line-vertical,
+.classic-warning-icon__line-vertical {
   animation-delay: 0.4s;
 }
 
@@ -152,17 +156,14 @@
   animation: drawCross 1s ease forwards;
 }
 
-/* Exclamation Line Animation */
-.classic-warning-icon__exclamation-line {
-  stroke-dasharray: 48;
-  stroke-dashoffset: 48;
+.classic-default-icon__question-path {
+  stroke-dasharray: 64;
+  stroke-dashoffset: 64;
   animation: drawLine 1s ease forwards;
 }
 
-/* Dot Animation */
-.classic-warning-icon__dot,
 .classic-default-icon__dot {
-  animation: dotPulse 1.5s forwards ease-in-out;
+  animation: drawLine 1s ease forwards;
 }
 
 /* Keyframes */

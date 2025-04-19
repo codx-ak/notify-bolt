@@ -34,20 +34,18 @@ export const ClassicDefaultIcon = ({
         r="32"
         fill={background}
       />
-      <path
-        className="classic-default-icon__line-path"
-        d="M32 20V36"
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
         stroke={color}
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-      <circle
-        className="classic-default-icon__dot"
-        cx="32"
-        cy="44"
-        r="2.5"
+        strokeWidth="1px"
+        dy=".3em"
+        fontSize="30"
         fill={color}
-      />
+      >
+        ?
+      </text>
     </svg>
 
     {/* Sparkles */}
@@ -180,8 +178,8 @@ export const ClassicWarningIcon = ({
 }) => (
   <div className="classic-warning-icon-wrapper">
     <svg
-      width="64"
-      height="64"
+      width="75"
+      height="75"
       viewBox="0 0 64 64"
       fill="none"
       className="classic-warning-icon"
@@ -195,26 +193,26 @@ export const ClassicWarningIcon = ({
         className="classic-warning-icon__circle-background"
       />
 
-      {/* Exclamation Mark Line */}
+      {/* Exclamation Line - animated like info vertical line */}
       <path
         d="M32 18V36"
         stroke={color}
         strokeWidth="4"
         strokeLinecap="round"
-        className="classic-warning-icon__exclamation-line"
+        className="classic-warning-icon__line-vertical"
       />
 
-      {/* Exclamation Mark Dot */}
-      <circle
-        cx="32"
-        cy="46"
-        r="2.5"
-        fill={color}
-        className="classic-warning-icon__dot"
+      {/* Exclamation Dot - static (no pulse) */}
+      <path
+        d="M32 46H32.01"
+        stroke={color}
+        strokeWidth="4"
+        strokeLinecap="round"
+        className="classic-warning-icon__line-horizontal"
       />
     </svg>
 
-    {/* Sparkles */}
+    {/* ✨ Sparkles */}
     <Sparkles color={color} />
   </div>
 );
