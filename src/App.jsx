@@ -5,6 +5,8 @@ import { Features } from "./components/Features";
 import SetupSection from "./components/Steps";
 import Prism from "prismjs";
 import PlaygroundSection from "./components/Playground";
+import PerformanceSection from "./components/performance";
+import ThanksSection from "./components/Thanks";
 
 const App = () => {
   useEffect(() => {
@@ -16,6 +18,8 @@ const App = () => {
       <Features />
       <SetupSection />
       <PlaygroundSection />
+      <PerformanceSection />
+      <ThanksSection />
       <Footer />
     </div>
   );

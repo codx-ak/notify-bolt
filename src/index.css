@@ -234,7 +234,7 @@ body {
 }
 
 .setup-subtitle {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--color-subtitle);
   margin-bottom: 3rem;
 }
@@ -302,6 +302,7 @@ body {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   font-weight: 500;
+  margin-bottom: 0;
 }
 .option-btn {
   padding: 0.5rem 1rem;
@@ -315,6 +316,12 @@ body {
   font-size: 0.9rem;
   overflow-x: auto;
   place-self: center;
+}
+
+.playground-subtitle {
+  font-size: 1rem;
+  color: var(--color-subtitle);
+  margin-bottom: 3rem;
 }
 /* Code Block */
 .code-block {
@@ -380,6 +387,92 @@ input:checked + .switch-slider {
 
 input:checked + .switch-slider::before {
   transform: translateX(18px);
+}
+
+/* performance  */
+.performance-section {
+  animation: fade-in 1.2s ease-in-out both;
+}
+
+.performance-section .container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.performance-section h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.performance-section .subtitle {
+  font-size: 1rem;
+  color: var(--color-subtitle);
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  text-align: left;
+}
+
+.feature-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.feature-box .icon {
+  font-size: 28px;
+}
+
+.feature-box h3 {
+  font-size: 20px;
+  color: var(--brand-color);
+  margin-bottom: 6px;
+  text-align: center;
+  width: 100%;
+}
+
+.feature-box p {
+  font-size: 0.8rem;
+  color: var(--color-subtitle);
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* thanks  */
+.thanks-section {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.thanks-section h3 {
+  font-size: 20px;
+  color: var(--brand-color);
+  margin-bottom: 6px;
+  text-align: center;
+  width: 100%;
+}
+
+.thanks-section .tagline {
+  font-size: 0.8rem;
+  color: var(--color-subtitle);
+  line-height: 1.5;
+  text-align: center;
 }
 
 /* Footer */
