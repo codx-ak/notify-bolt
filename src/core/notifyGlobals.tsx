@@ -1,4 +1,5 @@
 import { NotifyGlobalConfigProps } from "../types/notify.types";
+import IconClose from "../assets/CloseIcon";
 
 // Default modal config state
 let notifyModalDefaults: NotifyGlobalConfigProps = {
@@ -6,7 +7,7 @@ let notifyModalDefaults: NotifyGlobalConfigProps = {
   allowOutsideClick: true,
   defaultSize: "sm",
   showCancelIcon: false,
-  cancelIcon: null,
+  cancelIcon: <IconClose />,
   style: {},
 };
 

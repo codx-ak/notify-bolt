@@ -1,5 +1,4 @@
 import { NotifyModalProps } from "../../types/notify.types";
-import IconClose from "../../assets/CloseIcon";
 import ModalIcon from "../common/ModalIcon";
 
 const DefaultNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
@@ -53,18 +52,13 @@ const DefaultNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
               onClick={() => reject?.("dismiss")}
               aria-label="Close"
             >
-              {cancelIcon ?? <IconClose />}
+              {cancelIcon}
             </div>
           )}
         </div>
 
         {/* ================== Icon Section ================== */}
-        <ModalIcon
-          icon={icon}
-          status={status}
-          style={style?.icon ?? {}}
-          variant={variant}
-        />
+        <ModalIcon modal={modal} />
 
         {/* Modal Title */}
         <div

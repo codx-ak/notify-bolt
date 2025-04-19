@@ -58,7 +58,7 @@ export interface NotifyGlobalConfigProps {
   allowOutsideClick?: boolean;
   defaultSize?: NotifyModalSize;
   showCancelIcon?: boolean;
-  cancelIcon?: React.ReactNode | string | null;
+  cancelIcon?: React.ReactNode | string;
   style?: NotifyModalStyle;
 }
 
@@ -71,9 +71,10 @@ export interface NotifyModalProps extends NotifyGlobalConfigProps {
   message: string;
   size?: NotifyModalSize;
   status: NotifyStatusType;
-  icon?: React.ReactNode | string | null;
+  icon?: NotifyStatusType | Exclude<string, NotifyStatusType> | React.ReactNode;
   showConfirmButton?: boolean;
   confirmButtonText?: string;
+  iconType?: NotifyModalVariant;
   animation?: NotifyModalAnimation;
   showCancelButton?: boolean;
   cancelButtonText?: string;
