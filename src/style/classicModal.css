@@ -76,73 +76,45 @@
 }
 
 /* Sparkles */
-.classic-success-icon__sparkle,
-.classic-default-icon__sparkle,
-.classic-error-icon__sparkle,
-.classic-info-icon__sparkle,
-.classic-warning-icon__sparkle {
+.classic-icon__sparkle {
   position: absolute;
   font-size: 10px;
   opacity: 0.8;
   animation: sparkleTwinkle 2.5s infinite ease-in-out;
 }
 
-.classic-success-icon__sparkle.sparkle-1,
-.classic-default-icon__sparkle.sparkle-1,
-.classic-error-icon__sparkle.sparkle-1,
-.classic-info-icon__sparkle.sparkle-1,
-.classic-warning-icon__sparkle.sparkle-1 {
+.classic-icon__sparkle.sparkle-1 {
   top: 8px;
   left: 10px;
   animation-delay: 0s;
 }
 
-.classic-success-icon__sparkle.sparkle-2,
-.classic-default-icon__sparkle.sparkle-2,
-.classic-error-icon__sparkle.sparkle-2,
-.classic-info-icon__sparkle.sparkle-2,
-.classic-warning-icon__sparkle.sparkle-2 {
+.classic-icon__sparkle.sparkle-2 {
   top: 8px;
   right: 14px;
   animation-delay: 0.4s;
 }
 
-.classic-success-icon__sparkle.sparkle-3,
-.classic-default-icon__sparkle.sparkle-3,
-.classic-error-icon__sparkle.sparkle-3,
-.classic-info-icon__sparkle.sparkle-3,
-.classic-warning-icon__sparkle.sparkle-3 {
+.classic-icon__sparkle.sparkle-3 {
   bottom: 12px;
   left: 12px;
   animation-delay: 0.8s;
 }
 
-.classic-success-icon__sparkle.sparkle-4,
-.classic-default-icon__sparkle.sparkle-4,
-.classic-error-icon__sparkle.sparkle-4,
-.classic-info-icon__sparkle.sparkle-4,
-.classic-warning-icon__sparkle.sparkle-4 {
+.classic-icon__sparkle.sparkle-4 {
   bottom: 8px;
   right: 10px;
   animation-delay: 1.2s;
 }
 
-.classic-success-icon__sparkle.sparkle-5,
-.classic-default-icon__sparkle.sparkle-5,
-.classic-error-icon__sparkle.sparkle-5,
-.classic-info-icon__sparkle.sparkle-5,
-.classic-warning-icon__sparkle.sparkle-5 {
+.classic-icon__sparkle.sparkle-5 {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   animation-delay: 1.6s;
 }
 
-.classic-success-icon__sparkle.sparkle-6,
-.classic-default-icon__sparkle.sparkle-6,
-.classic-error-icon__sparkle.sparkle-6,
-.classic-info-icon__sparkle.sparkle-6,
-.classic-warning-icon__sparkle.sparkle-6 {
+.classic-icon__sparkle.sparkle-6 {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
@@ -248,20 +220,4 @@
     opacity: 1;
     transform: scale(1.6) rotate(20deg);
   }
-}
-
-.classic-success-icon__sparkle {
-  color: #12b76a;
-}
-.classic-default-icon__sparkle {
-  color: #6366f1;
-}
-.classic-error-icon__sparkle {
-  color: #f04438;
-}
-.classic-info-icon__sparkle {
-  color: #0ea5e9;
-}
-.classic-warning-icon__sparkle {
-  color: #f59e0b;
 }
