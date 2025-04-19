@@ -1,6 +1,6 @@
 {
   "name": "notify-bolt",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "A customizable React alert and modal system with theme support, multiple variants, and global configuration.",
   "author": "Ak Moorthi",
   "license": "MIT",
@@ -61,6 +61,7 @@
     "sweet-alert",
     "notification",
     "bolt",
+    "show Notify",
     "custom-alerts"
   ],
   "repository": {
@@ -70,7 +71,7 @@
   "bugs": {
     "url": "https://github.com/codx-ak/notify-bolt/issues"
   },
-  "homepage": "https://github.com/codx-ak/notify-bolt#readme",
+  "homepage": "https://codx-ak.github.io/notify-bolt",
   "publishConfig": {
     "access": "public"
   }

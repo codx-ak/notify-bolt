@@ -1,47 +1,57 @@
-# notify-bolt
-
-[![npm version](https://img.shields.io/npm/v/notify-bolt.svg)](https://www.npmjs.com/package/notify-bolt)
-[![npm downloads](https://img.shields.io/npm/dm/notify-bolt.svg)](https://www.npmjs.com/package/notify-bolt)
-[![license](https://img.shields.io/github/license/codx-ak/notify-bolt.svg)](./LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/codx-ak/notify-bolt.svg)](https://github.com/codx-ak/notify-bolt)
-[![GitHub issues](https://img.shields.io/github/issues/codx-ak/notify-bolt.svg)](https://github.com/codx-ak/notify-bolt/issues)
-
-A lightweight and themeable modal alert system for React, built with customization in mind. Supports classic layout, dark/light themes, and global config — ideal for confirmations, errors, success messages, and more.
-
----
+<div align="center">
+  <img src="https://codx-ak.github.io/notify-bolt/logo.png" width="120" alt="Notify Bolt Logo" />
+  <h2 align="center">✨ Experience Notify Bolt in Action</h2>
+  <p align="center">
+  <a href="https://www.npmjs.com/package/notify-bolt">
+    <img src="https://img.shields.io/npm/v/notify-bolt.svg" alt="npm version" />
+  </a>
+  <a href="https://www.npmjs.com/package/notify-bolt">
+    <img src="https://img.shields.io/npm/dm/notify-bolt.svg" alt="npm downloads" />
+  </a>
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/github/license/codx-ak/notify-bolt.svg" alt="license" />
+  </a>
+  <a href="https://github.com/codx-ak/notify-bolt/stargazers">
+    <img src="https://img.shields.io/github/stars/codx-ak/notify-bolt.svg" alt="GitHub stars" />
+  </a>
+  <a href="https://github.com/codx-ak/notify-bolt/issues">
+    <img src="https://img.shields.io/github/issues/codx-ak/notify-bolt.svg" alt="GitHub issues" />
+  </a>
+</p>
+  <p align="center">
+    A blazing-fast, customizable, and elegant modal notification system for React.
+  </p>
+  <a href="https://codx-ak.github.io/notify-bolt/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀 OPEN PLAYGROUND -Try Live Now-blueviolet?style=for-the-badge&logo=vercel" />
+  </a>
+</div>
 
 ## ✨ Features
 
 - ✅ Easy to integrate
-- 🎨 Customizable styles and colors
-- 🌗 Light/Dark mode support
-- ⚡ Zero Dependencies
-- 💡 Built-in variants: `classic`,`default`
-- ⚙️ Global default settings
-
----
+- 🎨 Fully customizable
+- 🌗 Light & Dark mode support
+- ⚡ Zero dependencies
+- 💡 Built-in variants: `classic`, `default`, `"minimal"`
+- 🧩 Extendable global defaults
+- 🎥 Modal animations
+- 🔄 Confirm/Dismiss handling with `Promise`
 
 ## 📦 Installation
 
 ```bash
 npm install notify-bolt
-```
-
-or
-
-```bash
+# or
 yarn add notify-bolt
 ```
-
----
 
 ## 🚀 Usage
 
 ```tsx
-import { showNotifyModal } from "notify-bolt";
+import { showNotify } from "notify-bolt";
 
 const handleClick = () => {
-  showNotifyModal({
+  showNotify({
     title: "Delete this item?",
     message: "This action is permanent. Do you wish to proceed?",
     variant: "classic",
@@ -59,45 +69,39 @@ const handleClick = () => {
 };
 ```
 
----
+## 🔧 Configuration Params
 
-## 🔄 Available Props
-
-| Prop                | Type                                                                                              | Default     | Description                                  |
-| ------------------- | ------------------------------------------------------------------------------------------------- | ----------- | -------------------------------------------- |
-| `title`             | `string`                                                                                          | `""`        | Modal title text                             |
-| `message`           | `string`                                                                                          | `""`        | Content message shown inside the modal       |
-| `status`            | `"success"`, `"error"`, `"warning"`, `"info"`, `"default"`                                        | `"default"` | Status type (controls icon and color)        |
-| `variant`           | `"classic"` ,`"default"`                                                                          | `"classic"` | Visual layout style of the modal             |
-| `size`              | `"xs"`, `"sm"`, `"md"`, `"lg"`                                                                    | `"sm"`      | Modal size                                   |
-| `icon`              | `React.ReactNode`                                                                                 | `null`      | Optional custom icon override                |
-| `showConfirmButton` | `boolean`                                                                                         | `false`     | Whether to display the confirm button        |
-| `confirmButtonText` | `string`                                                                                          | `"Okay"`    | Label for the confirm button                 |
-| `showCancelButton`  | `boolean`                                                                                         | `false`     | Whether to display the cancel button         |
-| `cancelButtonText`  | `string`                                                                                          | `"Cancel"`  | Label for the cancel button                  |
-| `showCancelIcon`    | `boolean`                                                                                         | `true`      | Show cancel (X) icon in the modal header     |
-| `cancelIcon`        | `React.ReactNode`                                                                                 | `null`      | Custom cancel icon                           |
-| `style`             | `Object`                                                                                          | `{}`        | Style overrides for different modal sections |
-| `themeMode`         | `"light"`, `"dark"`                                                                               | `"light"`   | Theme mode of the modal                      |
-| `allowOutsideClick` | `boolean`                                                                                         | `false`     | Whether clicking outside                     |
-| `animation`         | `"slide-up"`, `"slide-down"`, `"slide-left"`, `"slide-right"`,`"zoom-in"`, `"zoom-out"`,`"fade"`, | `slide-up`  | Alert Modal animations                       |
-
----
+| Prop                | Type                                                                                               | Default      | Description                     |
+| ------------------- | -------------------------------------------------------------------------------------------------- | ------------ | ------------------------------- |
+| `title`             | `string \| React.ReactNode`                                                                        | `""`         | Modal title text                |
+| `message`           | `string \| React.ReactNode`                                                                        | `""`         | Message inside the modal        |
+| `status`            | `"success"`, `"error"`, `"warning"`, `"info"`, `"default"`                                         | `"default"`  | Controls icon and theme         |
+| `variant`           | `"classic"`, `"minimal"`,`"default"`                                                               | `"classic"`  | Modal layout style              |
+| `size`              | `"xs"`, `"sm"`, `"md"`, `"lg"`                                                                     | `"sm"`       | Modal size                      |
+| `icon`              | `React.ReactNode \| string \| status`                                                              | `status`     | Custom or default icon          |
+| `showConfirmButton` | `boolean`                                                                                          | `false`      | Show confirm button             |
+| `confirmButtonText` | `string \| React.ReactNode`                                                                        | `"Okay"`     | Confirm button label            |
+| `showCancelButton`  | `boolean`                                                                                          | `false`      | Show cancel button              |
+| `cancelButtonText`  | `string \| React.ReactNode`                                                                        | `"Cancel"`   | Cancel button label             |
+| `showCancelIcon`    | `boolean`                                                                                          | `true`       | Show dismiss/close icon         |
+| `cancelIcon`        | `React.ReactNode \| string`                                                                        | `IconClose`  | Custom cancel icon              |
+| `style`             | `NotifyStyleTypes`                                                                                 | `{}`         | Override modal styles           |
+| `themeMode`         | `"light"`, `"dark"`                                                                                | `"light"`    | Modal theme mode                |
+| `allowOutsideClick` | `boolean`                                                                                          | `false`      | Enable dismiss by outside click |
+| `animation`         | `"fade"`, `"slide-up"`, `"slide-down"`, `"slide-left"`, `"slide-right"`, `"zoom-in"`, `"zoom-out"` | `"slide-up"` | Transition animation            |
 
 ## 🌍 Global Defaults
 
 ```tsx
-import { setNotifyModalDefaults } from "notify-bolt";
+import { setNotifyDefaults } from "notify-bolt";
 
-setNotifyModalDefaults({
+setNotifyDefaults({
   themeMode: "light",
   defaultSize: "sm",
   allowOutsideClick: true,
   style: {},
 });
 ```
-
----
 
 ## 🛠 License
 

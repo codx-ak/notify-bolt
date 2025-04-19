@@ -1,5 +1,29 @@
 # 📦 Changelog
 
+## `v3.0.0` — _Apr 19, 2025_
+
+### 🚀 Major Release
+
+- ✨ **New UI Variant Added**  
+  Introduced a sleek new modal variant focused on minimal footprint and improved responsiveness across devices.
+
+- 🧪 **UI Playground Overhaul**  
+  Redesigned the live demo experience with better layout, previews, and interactivity for easier testing.
+
+- 🪄 **Improved Naming Consistency**  
+  Renamed props and internal types for better clarity and developer experience (DX). Old names will no longer be supported.
+
+- 🧠 **Codebase Optimization**  
+  Refactored and streamlined internal logic for better performance, modularity, and future scalability.
+
+- 🎨 **Theming Enhancements**  
+  Extended CSS variable support and introduced new tokens for finer control over UI appearance.
+
+- ⚠️ **Breaking Changes**  
+  Several props have been renamed or updated. Refer to the updated documentation and migration guide for upgrading instructions.
+
+---
+
 ## `v2.1.0` - _Apr 18, 2025_
 
 ### Changed
