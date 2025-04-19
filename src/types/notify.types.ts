@@ -67,17 +67,17 @@ export interface NotifyGlobalConfigProps {
  */
 export interface NotifyModalProps extends NotifyGlobalConfigProps {
   open: boolean;
-  title: string;
-  message: string;
+  title: string | React.ReactNode;
+  message: string | React.ReactNode;
   size?: NotifyModalSize;
   status: NotifyStatusType;
   icon?: NotifyStatusType | Exclude<string, NotifyStatusType> | React.ReactNode;
   showConfirmButton?: boolean;
-  confirmButtonText?: string;
+  confirmButtonText?: string | React.ReactNode;
   iconType?: NotifyModalVariant;
   animation?: NotifyModalAnimation;
   showCancelButton?: boolean;
-  cancelButtonText?: string;
+  cancelButtonText?: string | React.ReactNode;
   variant?: NotifyModalVariant;
   resolve: ((value: string) => void) | null;
   reject: ((reason: string) => void) | null;

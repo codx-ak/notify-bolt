@@ -29,12 +29,3 @@
   text-transform: capitalize;
   font-size: 0.9rem;
 }
-
-/* Button Container */
-.notify-default-modal-button-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}

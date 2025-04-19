@@ -1,8 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { NotifyModalProps } from "../types/notify.types";
 import { getNotifyModalDefaults } from "./notifyGlobals";
-import ClassicNotifyModal from "../components/modal/ClassicNotifyModal";
-import DefaultNotifyModal from "../components/modal/DefaultNotifyModal";
+import Modal from "../components/modal/Modal";
 
 // Variable to store the DOM container for the modal
 let container: HTMLDivElement | null = null;
@@ -41,98 +40,35 @@ export const showNotifyModal = (
       }
     };
 
-    const renderModalVariant = () => {
-      switch (props.variant ?? "classic") {
-        case "classic":
-          return (
-            <ClassicNotifyModal
-              modal={{
-                open: true,
-                title: props.title || "",
-                message: props.message || "",
-                status: props.status || "default",
-                variant: props.variant,
-                size: props.size ?? defaults.defaultSize,
-                icon: props.icon ?? props.status,
-                iconType: props?.iconType ?? props.variant,
-                showConfirmButton: props.showConfirmButton ?? false,
-                confirmButtonText: props.confirmButtonText ?? "Okay",
-                showCancelButton: props.showCancelButton ?? false,
-                cancelButtonText: props.cancelButtonText ?? "Cancel",
-                showCancelIcon: props.showCancelIcon ?? true,
-                animation: props.animation ?? "slide-up",
-                cancelIcon: props.cancelIcon ?? defaults.cancelIcon,
-                style: { ...defaults.style, ...props.style },
-                themeMode: props.themeMode ?? defaults.themeMode,
-                allowOutsideClick:
-                  props.allowOutsideClick ?? defaults.allowOutsideClick,
-                resolve: () => handleClose("confirm"),
-                reject: () => handleClose("dismiss"),
-              }}
-            />
-          );
-        case "default":
-          return (
-            <DefaultNotifyModal
-              modal={{
-                open: true,
-                title: props.title || "",
-                message: props.message || "",
-                status: props.status || "default",
-                variant: props.variant,
-                size: props.size ?? defaults.defaultSize,
-                icon: props.icon ?? props.status,
-                iconType: props?.iconType ?? props.variant,
-                showConfirmButton: props.showConfirmButton ?? true,
-                confirmButtonText: props.confirmButtonText ?? "Okay",
-                showCancelButton: props.showCancelButton ?? true,
-                cancelButtonText: props.cancelButtonText ?? "Cancel",
-                showCancelIcon: props.showCancelIcon ?? false,
-                animation: props.animation ?? "slide-up",
-                cancelIcon: props.cancelIcon ?? defaults.cancelIcon,
-                style: { ...defaults.style, ...props.style },
-                themeMode: props.themeMode ?? defaults.themeMode,
-                allowOutsideClick:
-                  props.allowOutsideClick ?? defaults.allowOutsideClick,
-                resolve: () => handleClose("confirm"),
-                reject: () => handleClose("dismiss"),
-              }}
-            />
-          );
-        default:
-          return (
-            <DefaultNotifyModal
-              modal={{
-                open: true,
-                title: props.title || "",
-                message: props.message || "",
-                status: props.status || "default",
-                variant: "default",
-                size: props.size ?? defaults.defaultSize,
-                icon: props.icon ?? props.status,
-                iconType: props?.iconType ?? props.variant,
-                showConfirmButton: props.showConfirmButton ?? true,
-                confirmButtonText: props.confirmButtonText ?? "Okay",
-                showCancelButton: props.showCancelButton ?? true,
-                cancelButtonText: props.cancelButtonText ?? "Cancel",
-                showCancelIcon: props.showCancelIcon ?? false,
-                animation: props.animation ?? "slide-up",
-                cancelIcon: props.cancelIcon ?? defaults.cancelIcon,
-                style: { ...defaults.style, ...props.style },
-                themeMode: props.themeMode ?? defaults.themeMode,
-                allowOutsideClick:
-                  props.allowOutsideClick ?? defaults.allowOutsideClick,
-                resolve: () => handleClose("confirm"),
-                reject: () => handleClose("dismiss"),
-              }}
-            />
-          );
-      }
-    };
-
     // Render the modal variant based on the provided variant or fallback to default
     if (root) {
-      root.render(renderModalVariant());
+      root.render(
+        <Modal
+          modal={{
+            open: true,
+            title: props.title || "",
+            message: props.message || "",
+            status: props.status || "default",
+            variant: props.variant ?? "default",
+            size: props.size ?? defaults.defaultSize,
+            icon: props.icon ?? props.status,
+            iconType: props?.iconType ?? props.variant,
+            showConfirmButton: props.showConfirmButton ?? true,
+            confirmButtonText: props.confirmButtonText ?? "Okay",
+            showCancelButton: props.showCancelButton ?? true,
+            cancelButtonText: props.cancelButtonText ?? "Cancel",
+            showCancelIcon: props.showCancelIcon ?? false,
+            animation: props.animation ?? "slide-up",
+            cancelIcon: props.cancelIcon ?? defaults.cancelIcon,
+            style: { ...defaults.style, ...props.style },
+            themeMode: props.themeMode ?? defaults.themeMode,
+            allowOutsideClick:
+              props.allowOutsideClick ?? defaults.allowOutsideClick,
+            resolve: () => handleClose("confirm"),
+            reject: () => handleClose("dismiss"),
+          }}
+        />
+      );
     }
   });
 };

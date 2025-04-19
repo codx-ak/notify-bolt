@@ -28,7 +28,7 @@
   --notify-color-error: #f44336;
   --notify-color-warning: #ff9800;
   --notify-color-info: #2196f3;
-  --notify-color-default: #9e9e9e;
+  --notify-color-default: #8184f5;
   --notify-color-gray: #6b7280;
 
   /* overlay  */
@@ -57,7 +57,7 @@
   --notify-color-error: #ff6b6b;
   --notify-color-warning: #ffc107;
   --notify-color-info: #64b5f6;
-  --notify-color-default: #bdbdbd;
+  --notify-color-default: #8184f5;
   --notify-color-gray: #9e9e9e;
 
   --notify-confirm-bg: var(--notify-color-success);

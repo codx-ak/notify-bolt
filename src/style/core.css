@@ -195,7 +195,7 @@
   color: var(--notify-text-white);
 }
 .notify-modal-confirm-default {
-  background-color: var(--notify-color-success);
+  background-color: var(--notify-color-default);
   color: var(--notify-text-white);
 }
 
@@ -205,4 +205,13 @@
 }
 .notify-modal-cancel:hover {
   background-color: var(--notify-divider-color);
+}
+
+/* Button Container */
+.notify-modal-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
 }

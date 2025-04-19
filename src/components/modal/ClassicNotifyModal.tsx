@@ -1,107 +1,51 @@
 import { NotifyModalProps } from "../../types/notify.types";
+import ModalButtonContainer from "../common/ModalButtonContainer";
 import ModalIcon from "../common/ModalIcon";
 
 const ClassicNotifyModal = ({ modal }: { modal: NotifyModalProps }) => {
-  const {
-    open,
-    title,
-    message,
-    status,
-    size,
-    icon,
-    showConfirmButton,
-    confirmButtonText,
-    showCancelButton,
-    cancelButtonText,
-    showCancelIcon,
-    cancelIcon,
-    style,
-    themeMode,
-    variant,
-    allowOutsideClick,
-    animation,
-    resolve,
-    reject,
-  } = modal;
-
-  // Handles the modal dismiss logic when clicking close
-  const handleClose = () => (allowOutsideClick ? reject?.("dismiss") : null);
+  const { title, message, showCancelIcon, cancelIcon, style, reject } = modal;
 
   return (
-    <div
-      className={`notify-modal-overlay ${open ? "open" : ""}`}
-      onClick={handleClose}
-      style={style?.overlay ?? {}}
-    >
+    <>
+      {/* ================== Header Section ================== */}
       <div
-        className={`notify-modal-container notify-modal-${size} ${animation} ${
-          themeMode == "dark" ? "notify-theme-dark" : ""
-        }`}
-        style={style?.modal ?? {}}
-        onClick={(e) => e.stopPropagation()}
+        className={"notify-classic-modal-header"}
+        style={style?.modalHeader ?? {}}
       >
-        {/* ================== Header Section ================== */}
+        {/* Modal Title */}
         <div
-          className={"notify-classic-modal-header"}
-          style={style?.modalHeader ?? {}}
+          className={"notify-classic-modal-title"}
+          style={style?.title ?? {}}
         >
-          {/* Modal Title */}
+          {title}
+        </div>
+
+        {/* Close Icon */}
+        {showCancelIcon && (
           <div
-            className={"notify-classic-modal-title"}
-            style={style?.title ?? {}}
+            className={"notify-modal-cancel-icon"}
+            onClick={() => reject?.("dismiss")}
+            aria-label="Close"
           >
-            {title}
+            {cancelIcon}
           </div>
-
-          {/* Close Icon */}
-          {showCancelIcon && (
-            <div
-              className={"notify-modal-cancel-icon"}
-              onClick={() => reject?.("dismiss")}
-              aria-label="Close"
-            >
-              {cancelIcon}
-            </div>
-          )}
-        </div>
-
-        {/* ================== Icon Section ================== */}
-        <ModalIcon modal={modal} />
-
-        {/* ================== Message Section ================== */}
-        <p
-          className={"notify-classic-modal-message"}
-          style={style?.message ?? {}}
-        >
-          {message}
-        </p>
-
-        {/* ================== Action Buttons ================== */}
-        <div
-          className={"notify-classic-modal-button-container"}
-          style={style?.buttonContainer ?? {}}
-        >
-          {showCancelButton && (
-            <button
-              className={`notify-modal-button notify-modal-cancel`}
-              onClick={() => reject?.("dismiss")}
-              style={style?.button ?? {}}
-            >
-              {cancelButtonText}
-            </button>
-          )}
-          {showConfirmButton && (
-            <button
-              className={`notify-modal-button notify-modal-confirm-${status}`}
-              onClick={() => resolve?.("confirm")}
-              style={style?.button ?? {}}
-            >
-              {confirmButtonText}
-            </button>
-          )}
-        </div>
+        )}
       </div>
-    </div>
+
+      {/* ================== Icon Section ================== */}
+      <ModalIcon modal={modal} />
+
+      {/* ================== Message Section ================== */}
+      <p
+        className={"notify-classic-modal-message"}
+        style={style?.message ?? {}}
+      >
+        {message}
+      </p>
+
+      {/* ================== Action Buttons ================== */}
+      <ModalButtonContainer modal={modal} />
+    </>
   );
 };
 
