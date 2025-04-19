@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  NotifyModalProps,
-  NotifyModalVariant,
-  NotifyStatusType,
+  NotifyProps,
+  NotifyVariantTypes,
+  NotifyStatusTypes,
 } from "../../types/notify.types";
 import {
   ClassicSuccessIcon,
@@ -13,7 +13,7 @@ import {
 } from "../../assets/ClassicIcons";
 
 // Utility function to get colors based on status or icon
-const getIconColors = (status: NotifyStatusType) => {
+const getIconColors = (status: NotifyStatusTypes) => {
   const colorMap: Record<string, { backgroundColor: string; color: string }> = {
     success: {
       backgroundColor: "#D1FADF",
@@ -42,8 +42,8 @@ const getIconColors = (status: NotifyStatusType) => {
 
 // Utility: get default icon based on status
 const getClassicDefaultIcon = (
-  icon: NotifyStatusType,
-  status: NotifyStatusType
+  icon: NotifyStatusTypes,
+  status: NotifyStatusTypes
 ) => {
   const { backgroundColor, color } = getIconColors(status);
 
@@ -64,9 +64,9 @@ const getClassicDefaultIcon = (
 };
 
 const getIcon = (
-  variant: NotifyModalVariant,
-  icon: NotifyStatusType,
-  status: NotifyStatusType
+  variant: NotifyVariantTypes,
+  icon: NotifyStatusTypes,
+  status: NotifyStatusTypes
 ) => {
   switch (variant) {
     case "classic":
@@ -80,24 +80,26 @@ const getIcon = (
 };
 
 // Utility: get container className based on variant
-const getVariantClassNames = (variant: NotifyModalVariant) => {
+const getVariantClassNames = (variant: NotifyVariantTypes) => {
   switch (variant) {
     case "classic":
-      return "notify-classic-modal-icon-container";
+      return "notify-classic-icon-container";
+    case "minimal":
+      return "notify-minimal-icon-container";
     case "default":
-      return "notify-default-modal-icon-container";
+      return "notify-default-icon-container";
     default:
-      return "notify-default-modal-icon-container";
+      return "notify-default-icon-container";
   }
 };
 
 // Utility: Check if icon is a valid status string
-const isStatusType = (icon: unknown): icon is NotifyStatusType =>
+const isStatusType = (icon: unknown): icon is NotifyStatusTypes =>
   ["success", "error", "info", "warning", "default"].includes(
-    icon as NotifyStatusType
+    icon as NotifyStatusTypes
   );
 
-const ModalIcon = ({ modal }: { modal: NotifyModalProps }) => {
+const IconContainer = ({ modal }: { modal: NotifyProps }) => {
   const { variant = "default", icon, style, status } = modal;
 
   const containerStyle = getVariantClassNames(variant);
@@ -153,4 +155,4 @@ const ModalIcon = ({ modal }: { modal: NotifyModalProps }) => {
   );
 };
 
-export default ModalIcon;
+export default IconContainer;

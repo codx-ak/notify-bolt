@@ -3,16 +3,19 @@ import React from "react";
 /**
  * Theme mode options for the modal.
  */
-type NotifyThemeMode = "light" | "dark";
+type NotifyThemeModeTypes = "light" | "dark";
 
 /**
  * Visual variants for the modal layout.
  * Future expansion can add more variants beyond 'classic'.
  */
-export type NotifyModalVariant = "classic" | "default";
+export type NotifyVariantTypes = "classic" | "default" | "minimal";
+
+// icons types
+type NotifyIconTypes = "classic";
 
 // animations for modal
-type NotifyModalAnimation =
+type NotifyAnimationTypes =
   | "fade"
   | "slide-up"
   | "slide-down"
@@ -24,12 +27,12 @@ type NotifyModalAnimation =
 /**
  * Modal size options.
  */
-type NotifyModalSize = "xs" | "sm" | "md" | "lg";
+type NotifySizeTypes = "xs" | "sm" | "md" | "lg";
 
 /**
  * Types of alert statuses.
  */
-export type NotifyStatusType =
+export type NotifyStatusTypes =
   | "success"
   | "error"
   | "info"
@@ -39,7 +42,7 @@ export type NotifyStatusType =
 /**
  * Custom styles for different modal parts.
  */
-interface NotifyModalStyle {
+interface NotifyStyleTypes {
   title?: React.CSSProperties | null;
   message?: React.CSSProperties | null;
   icon?: React.CSSProperties | null;
@@ -54,31 +57,31 @@ interface NotifyModalStyle {
  * Global configuration options shared across all notify-bolt modals.
  */
 export interface NotifyGlobalConfigProps {
-  themeMode?: NotifyThemeMode;
+  themeMode?: NotifyThemeModeTypes;
   allowOutsideClick?: boolean;
-  defaultSize?: NotifyModalSize;
+  defaultSize?: NotifySizeTypes;
   showCancelIcon?: boolean;
   cancelIcon?: React.ReactNode | string;
-  style?: NotifyModalStyle;
+  style?: NotifyStyleTypes;
 }
 
 /**
  * Props for a single Notify modal alert.
  */
-export interface NotifyModalProps extends NotifyGlobalConfigProps {
+export interface NotifyProps extends NotifyGlobalConfigProps {
   open: boolean;
   title: string | React.ReactNode;
   message: string | React.ReactNode;
-  size?: NotifyModalSize;
-  status: NotifyStatusType;
-  icon?: NotifyStatusType | Exclude<string, NotifyStatusType> | React.ReactNode;
+  size?: NotifySizeTypes;
+  status: NotifyStatusTypes;
+  icon?: NotifyStatusTypes | string | React.ReactNode;
   showConfirmButton?: boolean;
   confirmButtonText?: string | React.ReactNode;
-  iconType?: NotifyModalVariant;
-  animation?: NotifyModalAnimation;
+  iconType?: NotifyIconTypes;
+  animation?: NotifyAnimationTypes;
   showCancelButton?: boolean;
   cancelButtonText?: string | React.ReactNode;
-  variant?: NotifyModalVariant;
+  variant?: NotifyVariantTypes;
   resolve: ((value: string) => void) | null;
   reject: ((reason: string) => void) | null;
 }

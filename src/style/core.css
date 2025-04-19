@@ -1,5 +1,5 @@
 /* Overlay */
-.notify-modal-overlay {
+.notify-overlay {
   position: fixed;
   inset: 0;
   background-color: var(--notify-overlay-bg);
@@ -13,13 +13,13 @@
   z-index: 999999;
 }
 
-.notify-modal-overlay.open {
+.notify-overlay.open {
   opacity: 1;
   visibility: visible;
 }
 
 /* Modal container */
-.notify-modal-container {
+.notify-container {
   font-family: "Poppins", sans-serif;
   background: var(--notify-bg-color);
   color: var(--notify-text-primary);
@@ -137,32 +137,36 @@
 }
 
 /* Size variants */
-.notify-modal-xs {
+.notify-xs {
   max-width: 300px;
 }
-.notify-modal-sm {
+.notify-sm {
   max-width: 400px;
 }
-.notify-modal-md {
+.notify-md {
   max-width: 500px;
 }
-.notify-modal-lg {
+.notify-lg {
   max-width: 600px;
 }
 
-.notify-modal-cancel-icon {
+.notify-cancel-icon {
   cursor: pointer;
   padding: 0.3rem;
   display: flex;
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
   justify-content: center;
   align-items: center;
   background-color: var(--notify-icon-bg);
   color: var(--notify-text-secondary);
   border-radius: 50%;
+  overflow: hidden;
 }
 
 /* Buttons */
-.notify-modal-button {
+.notify-button {
   padding: 0.6rem 1.25rem;
   font-size: 0.95rem;
   border: none;
@@ -173,42 +177,42 @@
   transition: background 0.3s ease;
 }
 
-.notify-modal-button:focus {
+.notify-button:focus {
   border: none;
   outline: none;
 }
 
-.notify-modal-confirm-success {
+.notify-confirm-success {
   background-color: var(--notify-color-success);
   color: var(--notify-text-white);
 }
-.notify-modal-confirm-error {
+.notify-confirm-error {
   background-color: var(--notify-color-error);
   color: var(--notify-text-white);
 }
-.notify-modal-confirm-info {
+.notify-confirm-info {
   background-color: var(--notify-color-info);
   color: var(--notify-text-white);
 }
-.notify-modal-confirm-warning {
+.notify-confirm-warning {
   background-color: var(--notify-color-warning);
   color: var(--notify-text-white);
 }
-.notify-modal-confirm-default {
+.notify-confirm-default {
   background-color: var(--notify-color-default);
   color: var(--notify-text-white);
 }
 
-.notify-modal-cancel {
+.notify-cancel {
   background-color: var(--notify-button-bg);
   color: var(--notify-button-text);
 }
-.notify-modal-cancel:hover {
+.notify-cancel:hover {
   background-color: var(--notify-divider-color);
 }
 
 /* Button Container */
-.notify-modal-button-container {
+.notify-button-container {
   display: flex;
   justify-content: center;
   gap: 1rem;

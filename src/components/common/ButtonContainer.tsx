@@ -1,14 +1,14 @@
-import { NotifyModalProps } from "../../types/notify.types";
+import { NotifyProps } from "../../types/notify.types";
 
-const ModalButtonContainer = ({ modal }: { modal: NotifyModalProps }) => {
+const ButtonContainer = ({ modal }: { modal: NotifyProps }) => {
   return (
     <div
-      className={"notify-modal-button-container"}
+      className={"notify-button-container"}
       style={modal.style?.buttonContainer ?? {}}
     >
       {modal.showCancelButton && (
         <button
-          className={`notify-modal-button notify-modal-cancel`}
+          className={`notify-button notify-cancel`}
           onClick={() => modal.reject?.("dismiss")}
           style={modal.style?.button ?? {}}
         >
@@ -17,7 +17,7 @@ const ModalButtonContainer = ({ modal }: { modal: NotifyModalProps }) => {
       )}
       {modal.showConfirmButton && (
         <button
-          className={`notify-modal-button notify-modal-confirm-${modal.status}`}
+          className={`notify-button notify-confirm-${modal.status}`}
           onClick={() => modal.resolve?.("confirm")}
           style={modal.style?.button ?? {}}
         >
@@ -28,4 +28,4 @@ const ModalButtonContainer = ({ modal }: { modal: NotifyModalProps }) => {
   );
 };
 
-export default ModalButtonContainer;
+export default ButtonContainer;

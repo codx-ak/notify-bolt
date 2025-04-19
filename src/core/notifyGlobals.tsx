@@ -2,7 +2,7 @@ import { NotifyGlobalConfigProps } from "../types/notify.types";
 import IconClose from "../assets/CloseIcon";
 
 // Default modal config state
-let notifyModalDefaults: NotifyGlobalConfigProps = {
+let notifyDefaults: NotifyGlobalConfigProps = {
   themeMode: "light",
   allowOutsideClick: true,
   defaultSize: "sm",
@@ -14,21 +14,20 @@ let notifyModalDefaults: NotifyGlobalConfigProps = {
 /**
  * Get the current global defaults for notify-bolt modals
  */
-export const getNotifyModalDefaults = (): NotifyGlobalConfigProps =>
-  notifyModalDefaults;
+export const getNotifyDefaults = (): NotifyGlobalConfigProps => notifyDefaults;
 
 /**
  * Set or update global defaults for notify-bolt modals
  * @param config Partial config to override defaults
  */
-export const setNotifyModalDefaults = (
+export const setNotifyDefaults = (
   config: Partial<NotifyGlobalConfigProps>
 ): void => {
-  notifyModalDefaults = {
-    ...notifyModalDefaults,
+  notifyDefaults = {
+    ...notifyDefaults,
     ...config,
     style: {
-      ...notifyModalDefaults.style,
+      ...notifyDefaults.style,
       ...config.style,
     },
   };

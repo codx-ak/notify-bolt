@@ -1,19 +1,19 @@
 import { createRoot } from "react-dom/client";
-import { NotifyModalProps } from "../types/notify.types";
-import { getNotifyModalDefaults } from "./notifyGlobals";
-import Modal from "../components/modal/Modal";
+import { NotifyProps } from "../types/notify.types";
+import { getNotifyDefaults } from "./notifyGlobals";
+import Modal from "./Modal";
 
 // Variable to store the DOM container for the modal
 let container: HTMLDivElement | null = null;
 
-export const showNotifyModal = (
+export const showNotify = (
   props: Omit<
-    Partial<NotifyModalProps>,
+    Partial<NotifyProps>,
     "open" | "resolve" | "reject" | "defaultSize"
   >
 ): Promise<"confirm" | "dismiss"> => {
   // Get global modal defaults
-  const defaults = getNotifyModalDefaults();
+  const defaults = getNotifyDefaults();
 
   // Create a new DOM container if one doesn't already exist
   if (!container) {
@@ -52,12 +52,12 @@ export const showNotifyModal = (
             variant: props.variant ?? "default",
             size: props.size ?? defaults.defaultSize,
             icon: props.icon ?? props.status,
-            iconType: props?.iconType ?? props.variant,
-            showConfirmButton: props.showConfirmButton ?? true,
+            iconType: props?.iconType ?? "classic",
+            showConfirmButton: props.showConfirmButton,
             confirmButtonText: props.confirmButtonText ?? "Okay",
-            showCancelButton: props.showCancelButton ?? true,
+            showCancelButton: props.showCancelButton,
             cancelButtonText: props.cancelButtonText ?? "Cancel",
-            showCancelIcon: props.showCancelIcon ?? false,
+            showCancelIcon: props.showCancelIcon,
             animation: props.animation ?? "slide-up",
             cancelIcon: props.cancelIcon ?? defaults.cancelIcon,
             style: { ...defaults.style, ...props.style },

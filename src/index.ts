@@ -1,12 +1,13 @@
 import "./style/theme.css";
 import "./style/core.css";
-import "./style/classicModal.css";
-import "./style/defaultModal.css";
+import "./style/classicVariant.css";
+import "./style/defaultVariant.css";
+import "./style/minimalVariant.css";
 
-export { showNotifyModal } from "./core/ShowNotifyModal";
-export { setNotifyModalDefaults } from "./core/notifyGlobals";
+export { showNotify } from "./core/showNotify";
+export { setNotifyDefaults } from "./core/notifyGlobals";
 
 export type {
   NotifyGlobalConfigProps,
-  NotifyModalProps,
+  NotifyProps,
 } from "./types/notify.types";
