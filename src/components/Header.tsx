@@ -21,7 +21,12 @@ const Header = () => {
           >
             Install Now
           </a>
-          <a href="/docs" className="btn secondary">
+          <a
+            href="https://github.com/codx-ak/notify-bolt#readme"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn secondary"
+          >
             View Docs
           </a>
         </div>

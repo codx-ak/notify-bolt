@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { showNotifyModal, NotifyModalProps } from "notify-bolt";
+import { showNotify, NotifyProps } from "notify-bolt";
 import Prism from "prismjs";
 
 const PlaygroundSection = () => {
-  const [options, setOptions] = useState<Partial<NotifyModalProps>>({
+  const [options, setOptions] = useState({
     title: "Testing",
     message: "This is a test message!",
     allowOutsideClick: true,
@@ -13,6 +13,7 @@ const PlaygroundSection = () => {
     status: "success",
     themeMode: "light",
     variant: "classic",
+    iconType: "classic",
   });
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const PlaygroundSection = () => {
         <div className="playground-options">
           <h3>📦 Variant</h3>
           <div className="button-group">
-            {["classic", "default"].map((type) => (
+            {["classic", "minimal", "default"].map((type) => (
               <button
                 key={type}
                 className={`option-btn ${
@@ -42,6 +43,26 @@ const PlaygroundSection = () => {
                     ...options,
                     variant: type,
                     showCancelIcon: type === "classic",
+                  });
+                }}
+              >
+                {type}
+              </button>
+            ))}
+          </div>
+
+          <h3>📂 Icon Type</h3>
+          <div className="button-group">
+            {["classic"].map((type) => (
+              <button
+                key={type}
+                className={`option-btn ${
+                  options.iconType === type ? "active" : ""
+                }`}
+                onClick={() => {
+                  setOptions({
+                    ...options,
+                    iconType: type,
                   });
                 }}
               >
@@ -67,7 +88,7 @@ const PlaygroundSection = () => {
             ))}
           </div>
 
-          <h3>📐 Size</h3>
+          <h3>⚙️ Size</h3>
           <div className="button-group">
             {["xs", "sm", "md", "lg"].map((type) => (
               <button
@@ -129,12 +150,11 @@ const PlaygroundSection = () => {
           </div>
         </div>
 
-        <div>
-          <div className="playground-code">
-            <h4>📌 Example Code</h4>
-            <pre className="code-block" style={{ textAlign: "start" }}>
-              <code className="language-javascript">{`
-  showNotifyModal({
+        <div className="playground-code">
+          <h4>📌 Example Code</h4>
+          <pre className="code-block" style={{ textAlign: "start" }}>
+            <code className="language-javascript">{`
+  showNotify({
     title: ${options.title},
     message: ${options.message},
     variant: ${options.variant},
@@ -146,15 +166,14 @@ const PlaygroundSection = () => {
     showCancelIcon: ${options.showCancelIcon},
   })
 `}</code>
-            </pre>
-            <div style={{ textAlign: "center", marginTop: "2rem" }}>
-              <button
-                className="btn primary"
-                onClick={() => showNotifyModal(options)}
-              >
-                Preview Modal
-              </button>
-            </div>
+          </pre>
+          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+            <button
+              className="btn primary"
+              onClick={() => showNotify(options as NotifyProps)}
+            >
+              Preview Modal
+            </button>
           </div>
         </div>
       </div>

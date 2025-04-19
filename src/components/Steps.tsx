@@ -1,9 +1,9 @@
 import React from "react";
-import { showNotifyModal } from "notify-bolt";
+import { showNotify } from "notify-bolt";
 
 const SetupSection = () => {
   const handleOpen = () => {
-    showNotifyModal({
+    showNotify({
       title: "Delete this item?",
       message: "This action is permanent. Do you wish to proceed?",
       variant: "default",
@@ -31,9 +31,9 @@ const SetupSection = () => {
       <div className="setup-step">
         <h3 className="step-title">2. Import and use</h3>
         <pre className="code-block">
-          <code className="language-javascript">{`import { useNotify } from 'notify-bolt';
+          <code className="language-javascript">{`import { showNotify } from 'notify-bolt';
 
-useNotify({
+showNotify({
     title: "Delete this item?",
     message: "This action is permanent. Do you wish to proceed?",
     variant: "default",
