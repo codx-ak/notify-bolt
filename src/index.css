@@ -321,6 +321,7 @@ body {
   font-size: 0.9rem;
   overflow-x: auto;
   place-self: center;
+  flex: 1;
 }
 
 .playground-subtitle {

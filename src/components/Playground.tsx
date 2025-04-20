@@ -9,7 +9,7 @@ const PlaygroundSection = () => {
     allowOutsideClick: true,
     animation: "slide-up",
     size: "sm",
-    showCancelIcon: true,
+    showCloseIcon: true,
     status: "success",
     themeMode: "light",
     variant: "classic",
@@ -48,7 +48,7 @@ const PlaygroundSection = () => {
                   setOptions({
                     ...options,
                     variant: type,
-                    showCancelIcon: type === "classic",
+                    showCloseIcon: type === "classic",
                   });
                 }}
               >
@@ -175,11 +175,11 @@ const PlaygroundSection = () => {
                 <span>Close Icon</span>
                 <input
                   type="checkbox"
-                  checked={options.showCancelIcon}
+                  checked={options.showCloseIcon}
                   onChange={() =>
                     setOptions({
                       ...options,
-                      showCancelIcon: !options.showCancelIcon,
+                      showCloseIcon: !options.showCloseIcon,
                     })
                   }
                 />
@@ -286,7 +286,7 @@ const PlaygroundSection = () => {
     allowOutsideClick: ${options.allowOutsideClick},
     animation: ${options.animation},
     size: ${options.size},
-    showCancelIcon: ${options.showCancelIcon},
+    showCancelIcon: ${options.showCloseIcon},
     showDenyButton: ${options.showDenyButton},
     showCancelButton: ${options.showCancelButton},
     showConfirmButton: ${options.showConfirmButton},
