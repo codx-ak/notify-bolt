@@ -5,15 +5,15 @@ const CancelIconContainer = ({ modal }: { modal: NotifyProps }) => {
   const handleClose = () => modal.reject?.();
 
   // 2. If icon is a string: check if it's an image URL
-  if (typeof modal.cancelIcon === "string") {
+  if (typeof modal.closeIcon === "string") {
     const isURL =
-      modal.cancelIcon.startsWith("http://") ||
-      modal.cancelIcon.startsWith("https://");
+      modal.closeIcon.startsWith("http://") ||
+      modal.closeIcon.startsWith("https://");
     return (
       <>
         {isURL ? (
           <img
-            src={modal.cancelIcon}
+            src={modal.closeIcon}
             alt="modal-icon"
             className={"notify-cancel-icon"}
           />
@@ -23,7 +23,7 @@ const CancelIconContainer = ({ modal }: { modal: NotifyProps }) => {
             onClick={handleClose}
             aria-label="Close"
           >
-            {modal.cancelIcon}
+            {modal.closeIcon}
           </div>
         )}
       </>
@@ -31,14 +31,14 @@ const CancelIconContainer = ({ modal }: { modal: NotifyProps }) => {
   }
 
   // Case 3: Icon is JSX/ReactNode (custom component)
-  if (React.isValidElement(modal.cancelIcon)) {
+  if (React.isValidElement(modal.closeIcon)) {
     return (
       <div
         className={"notify-cancel-icon"}
         onClick={handleClose}
         aria-label="Close"
       >
-        {modal.cancelIcon}
+        {modal.closeIcon}
       </div>
     );
   }

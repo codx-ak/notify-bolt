@@ -4,14 +4,14 @@ import ButtonContainer from "../common/ButtonContainer";
 import IconContainer from "../common/IconContainer";
 
 const DefaultVariant = ({ modal }: { modal: NotifyProps }) => {
-  const { title, message, showCancelIcon, style } = modal;
+  const { title, message, showCloseIcon, style } = modal;
 
   return (
     <>
       {/* ================== Header Section ================== */}
       <div className={"notify-default-header"} style={style?.modalHeader ?? {}}>
         {/* Close Icon */}
-        {showCancelIcon && <CancelIconContainer modal={modal} />}
+        {showCloseIcon && <CancelIconContainer modal={modal} />}
       </div>
 
       {/* ================== Icon Section ================== */}

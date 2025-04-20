@@ -23,7 +23,7 @@ const Modal = ({ modal }: { modal: NotifyProps }) => {
               ...modal,
               showConfirmButton: modal.showConfirmButton ?? false,
               showCancelButton: modal.showCancelButton ?? false,
-              showCancelIcon: modal.showCancelIcon ?? true,
+              showCloseIcon: modal.showCloseIcon ?? true,
             }}
           />
         );
@@ -34,7 +34,7 @@ const Modal = ({ modal }: { modal: NotifyProps }) => {
               ...modal,
               showConfirmButton: modal.showConfirmButton ?? true,
               showCancelButton: modal.showCancelButton ?? true,
-              showCancelIcon: modal.showCancelIcon ?? false,
+              showCloseIcon: modal.showCloseIcon ?? false,
             }}
           />
         );
@@ -45,7 +45,7 @@ const Modal = ({ modal }: { modal: NotifyProps }) => {
               ...modal,
               showConfirmButton: modal.showConfirmButton ?? true,
               showCancelButton: modal.showCancelButton ?? true,
-              showCancelIcon: modal.showCancelIcon ?? false,
+              showCloseIcon: modal.showCloseIcon ?? false,
             }}
           />
         );
@@ -68,7 +68,7 @@ const Modal = ({ modal }: { modal: NotifyProps }) => {
         onClick={(e) => e.stopPropagation()}
       >
         {renderModalVariant()}
-        {modal.timerProgressBar && modal.timer && (
+        {modal.timerProgressBar && (modal.timer ?? 0) > 0 && (
           <div
             className="notify-progress-bar"
             style={{ animationDuration: `${modal.timer}ms` }}

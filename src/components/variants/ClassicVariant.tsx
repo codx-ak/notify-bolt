@@ -4,7 +4,7 @@ import ButtonContainer from "../common/ButtonContainer";
 import IconContainer from "../common/IconContainer";
 
 const ClassicVariant = ({ modal }: { modal: NotifyProps }) => {
-  const { title, message, showCancelIcon, style } = modal;
+  const { title, message, showCloseIcon, style } = modal;
 
   return (
     <>
@@ -16,7 +16,7 @@ const ClassicVariant = ({ modal }: { modal: NotifyProps }) => {
         </div>
 
         {/* Close Icon */}
-        {showCancelIcon && <CancelIconContainer modal={modal} />}
+        {showCloseIcon && <CancelIconContainer modal={modal} />}
       </div>
 
       {/* ================== Icon Section ================== */}

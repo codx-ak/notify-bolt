@@ -60,8 +60,8 @@ export interface NotifyGlobalConfigProps {
   themeMode?: NotifyThemeModeTypes;
   allowOutsideClick?: boolean;
   defaultSize?: NotifySizeTypes;
-  showCancelIcon?: boolean;
-  cancelIcon?: React.ReactNode | string;
+  showCloseIcon?: boolean;
+  closeIcon?: React.ReactNode | string;
   style?: NotifyStyleTypes;
 }
 

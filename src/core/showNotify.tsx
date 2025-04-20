@@ -66,9 +66,9 @@ export const showNotify = (
             confirmButtonText: props.confirmButtonText ?? "Okay",
             showCancelButton: props.showCancelButton,
             cancelButtonText: props.cancelButtonText ?? "Cancel",
-            showCancelIcon: props.showCancelIcon,
+            showCloseIcon: props.showCloseIcon,
             animation: props.animation ?? "slide-up",
-            cancelIcon: props.cancelIcon ?? defaults.cancelIcon,
+            closeIcon: props.closeIcon ?? defaults.closeIcon,
             style: { ...defaults.style, ...props.style },
             themeMode: props.themeMode ?? defaults.themeMode,
             allowOutsideClick:

@@ -1,5 +1,15 @@
 # 📦 Changelog
 
+## `v4.1.0` — _Apr 20, 2025_
+
+### Updated
+
+- changed props name `showCancelIcon`, `cancelIcon` to `showCloseIcon`, `closeIcon`
+
+### Fixed
+
+- Fixed issues with timer and timer progress bar.
+
 ## `v4.0.0` — _Apr 20, 2025_
 
 ### Added

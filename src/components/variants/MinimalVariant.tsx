@@ -4,7 +4,7 @@ import ButtonContainer from "../common/ButtonContainer";
 import IconContainer from "../common/IconContainer";
 
 const MinimalVariant = ({ modal }: { modal: NotifyProps }) => {
-  const { title, message, showCancelIcon, style } = modal;
+  const { title, message, showCloseIcon, style } = modal;
 
   return (
     <>
@@ -19,7 +19,7 @@ const MinimalVariant = ({ modal }: { modal: NotifyProps }) => {
             style={style?.modalHeader ?? {}}
           >
             {/* Close Icon */}
-            {showCancelIcon && <CancelIconContainer modal={modal} />}
+            {showCloseIcon && <CancelIconContainer modal={modal} />}
           </div>
 
           <div>

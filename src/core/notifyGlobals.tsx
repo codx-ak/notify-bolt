@@ -6,8 +6,8 @@ let notifyDefaults: NotifyGlobalConfigProps = {
   themeMode: "light",
   allowOutsideClick: true,
   defaultSize: "sm",
-  showCancelIcon: false,
-  cancelIcon: <IconClose />,
+  showCloseIcon: false,
+  closeIcon: <IconClose />,
   style: {},
 };
 

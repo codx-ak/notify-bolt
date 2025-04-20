@@ -84,8 +84,8 @@ const handleClick = () => {
 | `confirmButtonText` | `string \| React.ReactNode`                                                                        | `"Okay"`     | Confirm button label                                |
 | `showCancelButton`  | `boolean`                                                                                          | `false`      | Show cancel button                                  |
 | `cancelButtonText`  | `string \| React.ReactNode`                                                                        | `"Cancel"`   | Cancel button label                                 |
-| `showCancelIcon`    | `boolean`                                                                                          | `true`       | Show dismiss/close icon                             |
-| `cancelIcon`        | `React.ReactNode \| string`                                                                        | `IconClose`  | Custom cancel icon                                  |
+| `showCloseIcon`     | `boolean`                                                                                          | `true`       | Show dismiss/close icon                             |
+| `closeIcon`         | `React.ReactNode \| string`                                                                        | `IconClose`  | Custom cancel icon                                  |
 | `style`             | `object`                                                                                           | `{}`         | Override modal styles                               |
 | `themeMode`         | `"light"`, `"dark"`                                                                                | `"light"`    | Modal theme mode                                    |
 | `allowOutsideClick` | `boolean`                                                                                          | `false`      | Enable dismiss by outside click                     |
