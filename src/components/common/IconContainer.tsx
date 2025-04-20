@@ -1,115 +1,28 @@
 import React from "react";
+import { NotifyProps } from "../../types/notify.types";
 import {
-  NotifyProps,
-  NotifyVariantTypes,
-  NotifyStatusTypes,
-} from "../../types/notify.types";
-import {
-  ClassicSuccessIcon,
-  ClassicDefaultIcon,
-  ClassicErrorIcon,
-  ClassicInfoIcon,
-  ClassicWarningIcon,
-} from "../../assets/ClassicIcons";
-
-// Utility function to get colors based on status or icon
-const getIconColors = (status: NotifyStatusTypes) => {
-  const colorMap: Record<string, { backgroundColor: string; color: string }> = {
-    success: {
-      backgroundColor: "#D1FADF",
-      color: "#12B76A",
-    },
-    error: {
-      backgroundColor: "#FEE4E2",
-      color: "#F04438",
-    },
-    info: {
-      backgroundColor: "#E0F2FE",
-      color: "#0EA5E9",
-    },
-    warning: {
-      backgroundColor: "#FEF3C7",
-      color: "#F59E0B",
-    },
-    default: {
-      backgroundColor: "#E0E7FF",
-      color: "#6366F1",
-    },
-  };
-
-  return colorMap[status] || colorMap.default;
-};
-
-// Utility: get default icon based on status
-const getClassicDefaultIcon = (
-  icon: NotifyStatusTypes,
-  status: NotifyStatusTypes
-) => {
-  const { backgroundColor, color } = getIconColors(status);
-
-  switch (icon) {
-    case "success":
-      return <ClassicSuccessIcon background={backgroundColor} color={color} />;
-    case "error":
-      return <ClassicErrorIcon background={backgroundColor} color={color} />;
-    case "info":
-      return <ClassicInfoIcon background={backgroundColor} color={color} />;
-    case "warning":
-      return <ClassicWarningIcon background={backgroundColor} color={color} />;
-    case "default":
-      return <ClassicDefaultIcon background={backgroundColor} color={color} />;
-    default:
-      return <ClassicDefaultIcon background={backgroundColor} color={color} />;
-  }
-};
-
-const getIcon = (
-  variant: NotifyVariantTypes,
-  icon: NotifyStatusTypes,
-  status: NotifyStatusTypes
-) => {
-  switch (variant) {
-    case "classic":
-      return getClassicDefaultIcon(icon, status);
-    case "default":
-      return getClassicDefaultIcon(icon, status);
-
-    default:
-      return getClassicDefaultIcon(icon, status);
-  }
-};
-
-// Utility: get container className based on variant
-const getVariantClassNames = (variant: NotifyVariantTypes) => {
-  switch (variant) {
-    case "classic":
-      return "notify-classic-icon-container";
-    case "minimal":
-      return "notify-minimal-icon-container";
-    case "default":
-      return "notify-default-icon-container";
-    default:
-      return "notify-default-icon-container";
-  }
-};
-
-// Utility: Check if icon is a valid status string
-const isStatusType = (icon: unknown): icon is NotifyStatusTypes =>
-  ["success", "error", "info", "warning", "default"].includes(
-    icon as NotifyStatusTypes
-  );
+  getIconComponent,
+  getVariantClassNames,
+  isStatusType,
+} from "../../utils/Icons.utils";
 
 const IconContainer = ({ modal }: { modal: NotifyProps }) => {
-  const { variant = "default", icon, style, status } = modal;
+  const {
+    variant = "default",
+    icon,
+    style,
+    status,
+    iconType = "classic",
+  } = modal;
 
   const containerStyle = getVariantClassNames(variant);
 
-  // Case 1: Icon is a known status string (used as fallback)
+  // Case 1: If icon is a known status string
   if (isStatusType(icon)) {
-    const fallbackIcon = getIcon(variant, icon, status);
+    const iconComponent = getIconComponent(iconType, icon, status);
     return (
       <div className={containerStyle} style={{ ...style?.icon }}>
-        {fallbackIcon}
+        {iconComponent}
       </div>
     );
   }
@@ -137,7 +50,7 @@ const IconContainer = ({ modal }: { modal: NotifyProps }) => {
     );
   }
 
-  // Case 3: Icon is JSX/ReactNode (custom component)
+  // Case 3: If icon is JSX/ReactNode (custom component)
   if (React.isValidElement(icon)) {
     return (
       <div className={containerStyle} style={{ ...style?.icon }}>
@@ -147,10 +60,10 @@ const IconContainer = ({ modal }: { modal: NotifyProps }) => {
   }
 
   // Case 4: No valid icon provided – fallback to default status icon
-  const fallback = getIcon(variant, "default", status);
+  const fallbackIcon = getIconComponent(iconType, "default", status);
   return (
     <div className={containerStyle} style={{ ...style?.icon }}>
-      {fallback}
+      {fallbackIcon}
     </div>
   );
 };

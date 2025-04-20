@@ -2,8 +2,17 @@ import { NotifyProps } from "../types/notify.types";
 import ClassicVariant from "../components/variants/ClassicVariant";
 import DefaultVariant from "../components/variants/DefaultVariant";
 import MinimalVariant from "../components/variants/MinimalVariant";
+import { useEffect } from "react";
 
 const Modal = ({ modal }: { modal: NotifyProps }) => {
+  useEffect(() => {
+    if (modal.onDidOpen) modal.onDidOpen();
+
+    return () => {
+      if (modal.onWillClose) modal.onWillClose();
+    };
+  }, []);
+
   // render modal
   const renderModalVariant = () => {
     switch (modal.variant) {
@@ -44,8 +53,7 @@ const Modal = ({ modal }: { modal: NotifyProps }) => {
   };
 
   // Handles the modal dismiss logic when clicking close
-  const handleClose = () =>
-    modal.allowOutsideClick ? modal.reject?.("dismiss") : null;
+  const handleClose = () => (modal.allowOutsideClick ? modal.reject?.() : null);
   return (
     <div
       className={`notify-overlay ${modal.open ? "open" : ""}`}
@@ -55,11 +63,17 @@ const Modal = ({ modal }: { modal: NotifyProps }) => {
       <div
         className={`notify-container notify-${modal.size} ${modal.animation} ${
           modal.themeMode == "dark" ? "notify-theme-dark" : ""
-        }`}
+        } ${modal.variant == "minimal" ? `notify-border-${modal.status}` : ""}`}
         style={modal.style?.modal ?? {}}
         onClick={(e) => e.stopPropagation()}
       >
         {renderModalVariant()}
+        {modal.timerProgressBar && modal.timer && (
+          <div
+            className="notify-progress-bar"
+            style={{ animationDuration: `${modal.timer}ms` }}
+          />
+        )}
       </div>
     </div>
   );

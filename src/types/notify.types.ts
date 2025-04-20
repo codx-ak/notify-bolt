@@ -12,7 +12,7 @@ type NotifyThemeModeTypes = "light" | "dark";
 export type NotifyVariantTypes = "classic" | "default" | "minimal";
 
 // icons types
-type NotifyIconTypes = "classic";
+export type NotifyIconTypes = "classic" | "outline";
 
 // animations for modal
 type NotifyAnimationTypes =
@@ -82,6 +82,13 @@ export interface NotifyProps extends NotifyGlobalConfigProps {
   showCancelButton?: boolean;
   cancelButtonText?: string | React.ReactNode;
   variant?: NotifyVariantTypes;
-  resolve: ((value: string) => void) | null;
-  reject: ((reason: string) => void) | null;
+  timer?: number;
+  timerProgressBar?: boolean;
+  focusConfirm?: boolean;
+  showDenyButton?: boolean;
+  denyButtonText?: string | React.ReactNode;
+  onDidOpen?: () => void;
+  onWillClose?: () => void;
+  resolve: ((type: "confirm" | "deny") => void) | null;
+  reject: (() => void) | null;
 }

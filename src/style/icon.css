@@ -1,36 +1,6 @@
-.notify-classic-title {
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: capitalize;
-  color: var(--notify-text-primary);
-}
-
-/* Header */
-.notify-classic-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.notify-classic-icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 125px;
-}
-
-/* Message */
-.notify-classic-message {
-  margin-bottom: 1rem;
-  text-align: center;
-  color: var(--notify-text-secondary);
-  text-transform: capitalize;
-  font-size: 0.9rem;
-}
-
-/* icon styles  */
+/* ========================
+   Classic Icon Styles
+======================== */
 
 /* Wrapper */
 .classic-success-icon-wrapper,
@@ -120,7 +90,6 @@
 }
 
 /* Line Path Animation */
-
 .classic-info-icon__line-vertical,
 .classic-info-icon__line-horizontal,
 .classic-warning-icon__line-vertical,
@@ -147,6 +116,7 @@
   animation: drawCross 1s ease forwards;
 }
 
+/* Default Question Icon */
 .classic-default-icon__question-path {
   stroke-dasharray: 64;
   stroke-dashoffset: 64;
@@ -157,7 +127,60 @@
   animation: drawLine 1s ease forwards;
 }
 
-/* Keyframes */
+/* ========================
+   Outline Icon Styles
+======================== */
+
+.outline-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  position: relative;
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* Base SVG for all icons */
+.outline-svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  transform-origin: center;
+}
+
+/* Circle animation */
+.outline-circle {
+  stroke-dasharray: 389;
+  stroke-dashoffset: 389;
+  animation: drawCircle 0.6s ease-out forwards;
+}
+
+/* Path animation */
+.outline-check,
+.outline-error-line,
+.outline-info-line,
+.outline-warning-line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawLine 0.4s ease-out 0.6s forwards;
+}
+
+/* Default icon specific */
+.outline-icon--default .outline-default-question {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInQuestion 0.4s ease 0.6s forwards;
+}
+
+/* ========================
+   Shared Animations
+======================== */
+
 @keyframes pulseCircle {
   0% {
     transform: scale(0);
@@ -211,5 +234,29 @@
   50% {
     opacity: 1;
     transform: scale(1.6) rotate(20deg);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeInQuestion {
+  to {
+    opacity: 1;
+    transform: scale(1.05);
   }
 }

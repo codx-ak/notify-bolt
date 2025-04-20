@@ -11,7 +11,7 @@ export const showNotify = (
     Partial<NotifyProps>,
     "open" | "resolve" | "reject" | "defaultSize"
   >
-): Promise<"confirm" | "dismiss"> => {
+): Promise<"confirm" | "deny" | "dismiss"> => {
   // Get global modal defaults
   const defaults = getNotifyDefaults();
 
@@ -23,22 +23,31 @@ export const showNotify = (
 
   return new Promise((resolve, reject) => {
     const root = createRoot(container!); // Create a React root using the container
+    let autoHideTimeout: number | undefined;
 
     // Handle modal close events
-    const handleClose = (result: "confirm" | "dismiss") => {
+    const handleClose = (result: "confirm" | "dismiss" | "deny") => {
       if (root) {
         root.unmount(); // Unmount the modal
       }
       container?.remove(); // Remove the modal container from the DOM
       container = null; // Reset the container
 
+      clearTimeout(autoHideTimeout);
+
       // Resolve or reject the promise based on the modal's outcome
-      if (result === "confirm") {
-        resolve("confirm"); // Confirm button clicked
+      if (result === "confirm" || result === "deny") {
+        resolve(result);
       } else {
-        reject("dismiss"); // Dismiss button or outside click
+        reject(result);
       }
     };
+
+    if (typeof props.timer === "number" && props.timer > 0) {
+      autoHideTimeout = setTimeout(() => {
+        handleClose("dismiss");
+      }, props.timer);
+    }
 
     // Render the modal variant based on the provided variant or fallback to default
     if (root) {
@@ -64,7 +73,14 @@ export const showNotify = (
             themeMode: props.themeMode ?? defaults.themeMode,
             allowOutsideClick:
               props.allowOutsideClick ?? defaults.allowOutsideClick,
-            resolve: () => handleClose("confirm"),
+            timer: props.timer,
+            timerProgressBar: props.timerProgressBar ?? false,
+            focusConfirm: props.focusConfirm ?? true,
+            denyButtonText: props.denyButtonText ?? "Deny",
+            showDenyButton: props.showDenyButton ?? false,
+            onDidOpen: props.onDidOpen,
+            onWillClose: props.onWillClose,
+            resolve: (type: "confirm" | "deny") => handleClose(type),
             reject: () => handleClose("dismiss"),
           }}
         />

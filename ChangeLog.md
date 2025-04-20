@@ -1,5 +1,24 @@
 # 📦 Changelog
 
+## `v4.0.0` — _Apr 20, 2025_
+
+### Added
+
+- Added `outline` icon type to support all variants.
+- Added `timer`, `timerProgressBar`, `focusConfirm`, `showDenyButton`, `denyButtonText`, `onDidOpen`, and `onWillClose` props.
+
+### Updated
+
+- Separated CSS for better modularity and organization.
+- Updated props for enhanced customization and flexibility.
+- Improved modal behavior to support better icon animations and transitions.
+- Adjusted default modal layout styles to enhance responsiveness.
+
+### Fixed
+
+- Fixed issues with mismatched icon colors between classic and outline icon types.
+- Resolved type errors related to icon type and status combinations.
+
 ## `v3.0.0` — _Apr 19, 2025_
 
 ### 🚀 Major Release

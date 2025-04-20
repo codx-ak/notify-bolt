@@ -2,7 +2,7 @@ import React from "react";
 import { NotifyProps } from "../../types/notify.types";
 
 const CancelIconContainer = ({ modal }: { modal: NotifyProps }) => {
-  const handleClose = () => modal.reject?.("dismiss");
+  const handleClose = () => modal.reject?.();
 
   // 2. If icon is a string: check if it's an image URL
   if (typeof modal.cancelIcon === "string") {

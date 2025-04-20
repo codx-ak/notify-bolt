@@ -182,33 +182,41 @@
   outline: none;
 }
 
-.notify-confirm-success {
+.notify-button-success {
   background-color: var(--notify-color-success);
   color: var(--notify-text-white);
 }
-.notify-confirm-error {
+.notify-button-error {
   background-color: var(--notify-color-error);
   color: var(--notify-text-white);
 }
-.notify-confirm-info {
+.notify-button-info {
   background-color: var(--notify-color-info);
   color: var(--notify-text-white);
 }
-.notify-confirm-warning {
+.notify-button-warning {
   background-color: var(--notify-color-warning);
   color: var(--notify-text-white);
 }
-.notify-confirm-default {
+.notify-button-default {
   background-color: var(--notify-color-default);
   color: var(--notify-text-white);
 }
 
-.notify-cancel {
+.notify-button-cancel {
   background-color: var(--notify-button-bg);
   color: var(--notify-button-text);
 }
-.notify-cancel:hover {
+.notify-button-cancel:hover {
   background-color: var(--notify-divider-color);
+}
+
+.notify-deny {
+  background-color: var(--notify-color-warning);
+  color: var(--notify-text-white);
+}
+.notify-deny:hover {
+  opacity: 0.9;
 }
 
 /* Button Container */
@@ -218,4 +226,26 @@
   gap: 1rem;
   margin-top: 1.5rem;
   flex-wrap: wrap;
+}
+
+.notify-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  border-radius: 6px;
+  background-color: var(--notify-color-default);
+  width: 100%;
+  animation-name: notifyProgress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes notifyProgress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }

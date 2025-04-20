@@ -71,24 +71,34 @@ const handleClick = () => {
 
 ## 🔧 Configuration Params
 
-| Prop                | Type                                                                                               | Default      | Description                     |
-| ------------------- | -------------------------------------------------------------------------------------------------- | ------------ | ------------------------------- |
-| `title`             | `string \| React.ReactNode`                                                                        | `""`         | Modal title text                |
-| `message`           | `string \| React.ReactNode`                                                                        | `""`         | Message inside the modal        |
-| `status`            | `"success"`, `"error"`, `"warning"`, `"info"`, `"default"`                                         | `"default"`  | Controls icon and theme         |
-| `variant`           | `"classic"`, `"minimal"`,`"default"`                                                               | `"classic"`  | Modal layout style              |
-| `size`              | `"xs"`, `"sm"`, `"md"`, `"lg"`                                                                     | `"sm"`       | Modal size                      |
-| `icon`              | `React.ReactNode \| string \| status`                                                              | `status`     | Custom or default icon          |
-| `showConfirmButton` | `boolean`                                                                                          | `false`      | Show confirm button             |
-| `confirmButtonText` | `string \| React.ReactNode`                                                                        | `"Okay"`     | Confirm button label            |
-| `showCancelButton`  | `boolean`                                                                                          | `false`      | Show cancel button              |
-| `cancelButtonText`  | `string \| React.ReactNode`                                                                        | `"Cancel"`   | Cancel button label             |
-| `showCancelIcon`    | `boolean`                                                                                          | `true`       | Show dismiss/close icon         |
-| `cancelIcon`        | `React.ReactNode \| string`                                                                        | `IconClose`  | Custom cancel icon              |
-| `style`             | `NotifyStyleTypes`                                                                                 | `{}`         | Override modal styles           |
-| `themeMode`         | `"light"`, `"dark"`                                                                                | `"light"`    | Modal theme mode                |
-| `allowOutsideClick` | `boolean`                                                                                          | `false`      | Enable dismiss by outside click |
-| `animation`         | `"fade"`, `"slide-up"`, `"slide-down"`, `"slide-left"`, `"slide-right"`, `"zoom-in"`, `"zoom-out"` | `"slide-up"` | Transition animation            |
+| Prop                | Type                                                                                               | Default      | Description                                         |
+| ------------------- | -------------------------------------------------------------------------------------------------- | ------------ | --------------------------------------------------- |
+| `title`             | `string \| React.ReactNode`                                                                        | `""`         | Modal title text                                    |
+| `message`           | `string \| React.ReactNode`                                                                        | `""`         | Message inside the modal                            |
+| `status`            | `"success"`, `"error"`, `"warning"`, `"info"`, `"default"`                                         | `"default"`  | Controls icon and theme                             |
+| `variant`           | `"classic"`, `"minimal"`, `"default"`                                                              | `"classic"`  | Modal layout style                                  |
+| `size`              | `"xs"`, `"sm"`, `"md"`, `"lg"`                                                                     | `"sm"`       | Modal size                                          |
+| `icon`              | `React.ReactNode \| string \| status`                                                              | `status`     | Custom or default icon                              |
+| `iconType`          | `"classic"`, `"outline"`                                                                           | `"classic"`  | Defines the type of icon (classic or outline)       |
+| `showConfirmButton` | `boolean`                                                                                          | `false`      | Show confirm button                                 |
+| `confirmButtonText` | `string \| React.ReactNode`                                                                        | `"Okay"`     | Confirm button label                                |
+| `showCancelButton`  | `boolean`                                                                                          | `false`      | Show cancel button                                  |
+| `cancelButtonText`  | `string \| React.ReactNode`                                                                        | `"Cancel"`   | Cancel button label                                 |
+| `showCancelIcon`    | `boolean`                                                                                          | `true`       | Show dismiss/close icon                             |
+| `cancelIcon`        | `React.ReactNode \| string`                                                                        | `IconClose`  | Custom cancel icon                                  |
+| `style`             | `object`                                                                                           | `{}`         | Override modal styles                               |
+| `themeMode`         | `"light"`, `"dark"`                                                                                | `"light"`    | Modal theme mode                                    |
+| `allowOutsideClick` | `boolean`                                                                                          | `false`      | Enable dismiss by outside click                     |
+| `animation`         | `"fade"`, `"slide-up"`, `"slide-down"`, `"slide-left"`, `"slide-right"`, `"zoom-in"`, `"zoom-out"` | `"slide-up"` | Transition animation                                |
+| `timer`             | `number`                                                                                           | `undefined`  | Duration for automatic modal close in ms            |
+| `timerProgressBar`  | `boolean`                                                                                          | `false`      | Show a progress bar during the timer countdown      |
+| `focusConfirm`      | `boolean`                                                                                          | `true`       | Focus the confirm button when the modal opens       |
+| `showDenyButton`    | `boolean`                                                                                          | `false`      | Show deny button                                    |
+| `denyButtonText`    | `string \| React.ReactNode`                                                                        | `"Deny"`     | Deny button label                                   |
+| `onDidOpen`         | `() => void`                                                                                       | `undefined`  | Callback when the modal opens                       |
+| `onWillClose`       | `() => void`                                                                                       | `undefined`  | Callback before the modal closes                    |
+| `resolve`           | `((type: "confirm" \| "deny") => void) \| null`                                                    | `null`       | Function to resolve the modal action (confirm/deny) |
+| `reject`            | `() => void`                                                                                       | `null`       | Function to reject the modal action                 |
 
 ## 🌍 Global Defaults
 

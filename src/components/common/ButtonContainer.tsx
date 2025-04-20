@@ -8,16 +8,30 @@ const ButtonContainer = ({ modal }: { modal: NotifyProps }) => {
     >
       {modal.showCancelButton && (
         <button
-          className={`notify-button notify-cancel`}
-          onClick={() => modal.reject?.("dismiss")}
+          className={`notify-button notify-button-${
+            modal.focusConfirm ? "cancel" : `${modal.status}`
+          }`}
+          onClick={() => modal.reject?.()}
           style={modal.style?.button ?? {}}
         >
           {modal.cancelButtonText}
         </button>
       )}
+      {modal.showDenyButton && (
+        <button
+          className="notify-button notify-deny"
+          onClick={() => modal.resolve?.("deny")}
+          style={modal.style?.button ?? {}}
+        >
+          {modal.denyButtonText}
+        </button>
+      )}
+
       {modal.showConfirmButton && (
         <button
-          className={`notify-button notify-confirm-${modal.status}`}
+          className={`notify-button notify-button-${
+            modal.focusConfirm ? `${modal.status}` : "cancel"
+          }`}
           onClick={() => modal.resolve?.("confirm")}
           style={modal.style?.button ?? {}}
         >
