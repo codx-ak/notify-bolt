@@ -15,6 +15,9 @@ export const showNotify = (
   // Get global modal defaults
   const defaults = getNotifyDefaults();
 
+  // Add modal-lock class to body to prevent background interaction
+  document.body.classList.add("notify-lock");
+
   // Create a new DOM container if one doesn't already exist
   if (!container) {
     container = document.createElement("div");
@@ -32,6 +35,9 @@ export const showNotify = (
       }
       container?.remove(); // Remove the modal container from the DOM
       container = null; // Reset the container
+
+      // Remove modal-lock from body
+      document.body.classList.remove("notify-lock");
 
       clearTimeout(autoHideTimeout);
 

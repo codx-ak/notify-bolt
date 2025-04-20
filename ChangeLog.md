@@ -1,5 +1,12 @@
 # 📦 Changelog
 
+## `v4.2.0` — _Apr 20, 2025_
+
+### Fixed
+
+- Improved the focus flow to avoid focus getting stuck on buttons, ensuring smooth modal interaction.
+- Disabled background events
+
 ## `v4.1.0` — _Apr 20, 2025_
 
 ### Updated

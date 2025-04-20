@@ -2,9 +2,16 @@ import { NotifyProps } from "../types/notify.types";
 import ClassicVariant from "../components/variants/ClassicVariant";
 import DefaultVariant from "../components/variants/DefaultVariant";
 import MinimalVariant from "../components/variants/MinimalVariant";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const Modal = ({ modal }: { modal: NotifyProps }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.focus();
+    }
+  }, [modal.open]);
+
   useEffect(() => {
     if (modal.onDidOpen) modal.onDidOpen();
 
@@ -56,6 +63,8 @@ const Modal = ({ modal }: { modal: NotifyProps }) => {
   const handleClose = () => (modal.allowOutsideClick ? modal.reject?.() : null);
   return (
     <div
+      ref={containerRef}
+      tabIndex={-1}
       className={`notify-overlay ${modal.open ? "open" : ""}`}
       onClick={handleClose}
       style={modal.style?.overlay ?? {}}
