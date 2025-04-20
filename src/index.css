@@ -48,6 +48,14 @@ body {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .app,
+  .features-section,
+  .setup-section,
+  .playground-section {
+    padding: 1rem 0.5rem;
+  }
+}
 /* Header */
 .header {
   display: flex;
@@ -282,25 +290,22 @@ body {
 }
 
 .playground-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-bottom: 2.5rem;
   align-items: start;
   padding-bottom: 2rem;
 }
-
-@media (max-width: 768px) {
-  .playground-row {
-    grid-template-columns: 1fr;
-  }
+.playground-options {
+  max-width: 450px;
 }
 .playground-options h3 {
   font-size: 1rem;
   margin-bottom: 1rem;
   color: var(--brand-color);
   text-align: start;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
@@ -333,8 +338,6 @@ body {
   font-family: "Courier New", monospace;
   font-size: 1rem;
   line-height: 1.5;
-  white-space: pre-wrap;
-  word-wrap: break-word;
 }
 
 /* Switch / Toggle */
@@ -388,7 +391,11 @@ input:checked + .switch-slider {
 input:checked + .switch-slider::before {
   transform: translateX(18px);
 }
-
+.code-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* performance  */
 .performance-section {
   animation: fade-in 1.2s ease-in-out both;
@@ -412,14 +419,18 @@ input:checked + .switch-slider::before {
   margin-bottom: 3rem;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.performance-grid {
+  display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   text-align: left;
+  justify-content: center;
 }
 
-.feature-box {
+.performance-box {
+  width: 100%;
+  /* flex: 1; */
+  max-width: 300px;
   display: flex;
   align-items: flex-start;
   gap: 15px;
@@ -429,11 +440,11 @@ input:checked + .switch-slider::before {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.feature-box .icon {
+.performance-box .icon {
   font-size: 28px;
 }
 
-.feature-box h3 {
+.performance-box h3 {
   font-size: 20px;
   color: var(--brand-color);
   margin-bottom: 6px;
@@ -441,17 +452,11 @@ input:checked + .switch-slider::before {
   width: 100%;
 }
 
-.feature-box p {
+.performance-box p {
   font-size: 0.8rem;
   color: var(--color-subtitle);
   line-height: 1.5;
   text-align: center;
-}
-
-@media (max-width: 768px) {
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* thanks  */

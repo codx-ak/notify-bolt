@@ -14,6 +14,12 @@ const PlaygroundSection = () => {
     themeMode: "light",
     variant: "classic",
     iconType: "classic",
+    showDenyButton: false,
+    showCancelButton: false,
+    showConfirmButton: false,
+    timer: 0,
+    timerProgressBar: false,
+    focusConfirm: true,
   });
 
   useEffect(() => {
@@ -53,7 +59,7 @@ const PlaygroundSection = () => {
 
           <h3>📂 Icon Type</h3>
           <div className="button-group">
-            {["classic"].map((type) => (
+            {["classic", "outline"].map((type) => (
               <button
                 key={type}
                 className={`option-btn ${
@@ -105,25 +111,6 @@ const PlaygroundSection = () => {
             ))}
           </div>
 
-          <h3>🌓 Theme Mode</h3>
-          <div className="toggle-group">
-            <label className="switch-label">
-              <span>light </span>
-              <input
-                type="checkbox"
-                checked={options.themeMode === "dark"}
-                onChange={() =>
-                  setOptions({
-                    ...options,
-                    themeMode: options.themeMode === "light" ? "dark" : "light",
-                  })
-                }
-              />
-              <span className="switch-slider"></span>
-              <span>dark </span>
-            </label>
-          </div>
-
           <h3>⭐ Animation</h3>
           <div className="button-group">
             {[
@@ -148,10 +135,146 @@ const PlaygroundSection = () => {
               </button>
             ))}
           </div>
+
+          <h3>⚙️ Buttons</h3>
+          <div className="button-group" style={{ gap: "20px" }}>
+            <div className="toggle-group">
+              <label className="switch-label">
+                <span>Confirm Button</span>
+                <input
+                  type="checkbox"
+                  checked={options.showConfirmButton}
+                  onChange={() =>
+                    setOptions({
+                      ...options,
+                      showConfirmButton: !options.showConfirmButton,
+                    })
+                  }
+                />
+                <span className="switch-slider"></span>
+              </label>
+            </div>
+            <div className="toggle-group">
+              <label className="switch-label">
+                <span>Deny Button</span>
+                <input
+                  type="checkbox"
+                  checked={options.showDenyButton}
+                  onChange={() =>
+                    setOptions({
+                      ...options,
+                      showDenyButton: !options.showDenyButton,
+                    })
+                  }
+                />
+                <span className="switch-slider"></span>
+              </label>
+            </div>
+            <div className="toggle-group">
+              <label className="switch-label">
+                <span>Close Icon</span>
+                <input
+                  type="checkbox"
+                  checked={options.showCancelIcon}
+                  onChange={() =>
+                    setOptions({
+                      ...options,
+                      showCancelIcon: !options.showCancelIcon,
+                    })
+                  }
+                />
+                <span className="switch-slider"></span>
+              </label>
+            </div>
+            <div className="toggle-group">
+              <label className="switch-label">
+                <span>Cancel Button</span>
+                <input
+                  type="checkbox"
+                  checked={options.showCancelButton}
+                  onChange={() =>
+                    setOptions({
+                      ...options,
+                      showCancelButton: !options.showCancelButton,
+                    })
+                  }
+                />
+                <span className="switch-slider"></span>
+              </label>
+            </div>
+            <div className="toggle-group">
+              <label className="switch-label">
+                <span>Focus Confirm Button</span>
+                <input
+                  type="checkbox"
+                  checked={options.focusConfirm}
+                  onChange={() =>
+                    setOptions({
+                      ...options,
+                      focusConfirm: !options.focusConfirm,
+                    })
+                  }
+                />
+                <span className="switch-slider"></span>
+              </label>
+            </div>
+            <div className="toggle-group">
+              <label className="switch-label">
+                <span>Timer (5000ms)</span>
+                <input
+                  type="checkbox"
+                  checked={options.timer ? true : false}
+                  onChange={() =>
+                    setOptions({
+                      ...options,
+                      timer: options.timer ? 0 : 5000,
+                    })
+                  }
+                />
+                <span className="switch-slider"></span>
+              </label>
+            </div>
+            <div className="toggle-group">
+              <label className="switch-label">
+                <span>Timer Progress Bar</span>
+                <input
+                  type="checkbox"
+                  checked={options.timerProgressBar}
+                  onChange={() =>
+                    setOptions({
+                      ...options,
+                      timerProgressBar: !options.timerProgressBar,
+                    })
+                  }
+                />
+                <span className="switch-slider"></span>
+              </label>
+            </div>
+          </div>
         </div>
 
         <div className="playground-code">
-          <h4>📌 Example Code</h4>
+          <div className="code-container">
+            <h4>📌 Example Code</h4>
+
+            <div className="toggle-group">
+              <label className="switch-label">
+                <span>Mode </span>
+                <input
+                  type="checkbox"
+                  checked={options.themeMode === "dark"}
+                  onChange={() =>
+                    setOptions({
+                      ...options,
+                      themeMode:
+                        options.themeMode === "light" ? "dark" : "light",
+                    })
+                  }
+                />
+                <span className="switch-slider"></span>
+              </label>
+            </div>
+          </div>
           <pre className="code-block" style={{ textAlign: "start" }}>
             <code className="language-javascript">{`
   showNotify({
@@ -164,6 +287,12 @@ const PlaygroundSection = () => {
     animation: ${options.animation},
     size: ${options.size},
     showCancelIcon: ${options.showCancelIcon},
+    showDenyButton: ${options.showDenyButton},
+    showCancelButton: ${options.showCancelButton},
+    showConfirmButton: ${options.showConfirmButton},
+    timerProgressBar: ${options.timerProgressBar},
+    focusConfirm: ${options.focusConfirm},
+    ${options.timer ? `timer: ${options.timer},` : ""}
   })
 `}</code>
           </pre>

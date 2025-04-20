@@ -33,8 +33,8 @@ const PerformanceSection = () => {
           Built with performance in mind. Lightweight, fast, and efficient.
         </p>
 
-        <div className="features-grid">
-          <div className="feature-box">
+        <div className="performance-grid">
+          <div className="performance-box">
             <div className="icon">⚡</div>
             <div style={{ flex: 1 }}>
               <h3>Lightning Fast</h3>
@@ -45,7 +45,7 @@ const PerformanceSection = () => {
             </div>
           </div>
 
-          <div className="feature-box">
+          <div className="performance-box">
             <div className="icon">📦</div>
             <div style={{ flex: 1 }}>
               <h3>Bundle Size</h3>
