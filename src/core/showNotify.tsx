@@ -84,6 +84,10 @@ export const showNotify = (
             focusConfirm: props.focusConfirm ?? true,
             denyButtonText: props.denyButtonText ?? "Deny",
             showDenyButton: props.showDenyButton ?? false,
+            template:
+              typeof props.template === "function"
+                ? props.template
+                : props.template ?? null,
             onDidOpen: props.onDidOpen,
             onWillClose: props.onWillClose,
             resolve: (type: "confirm" | "deny") => handleClose(type),

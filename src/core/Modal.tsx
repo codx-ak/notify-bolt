@@ -76,7 +76,9 @@ const Modal = ({ modal }: { modal: NotifyProps }) => {
         style={modal.style?.modal ?? {}}
         onClick={(e) => e.stopPropagation()}
       >
-        {renderModalVariant()}
+        {typeof modal.template === "function"
+          ? modal.template({ resolve: modal.resolve!, reject: modal.reject! })
+          : modal.template ?? renderModalVariant()}
         {modal.timerProgressBar && (modal.timer ?? 0) > 0 && (
           <div
             className="notify-progress-bar"
