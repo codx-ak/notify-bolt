@@ -1,5 +1,13 @@
 # 📦 Changelog
 
+## `v4.3.0` — _Apr 20, 2025_
+
+## ✨ Added
+
+- Added `celebrate` (boolean) to show confetti.
+- Added `celebrationType` to choose confetti style (basic, random, realistic, fireworks, snow, pride, etc.).
+- Added `template` to allow custom modal content.
+
 ## `v4.2.0` — _Apr 20, 2025_
 
 ### Fixed

@@ -99,6 +99,9 @@ const handleClick = () => {
 | `onWillClose`       | `() => void`                                                                                       | `undefined`  | Callback before the modal closes                    |
 | `resolve`           | `((type: "confirm" \| "deny") => void) \| null`                                                    | `null`       | Function to resolve the modal action (confirm/deny) |
 | `reject`            | `() => void`                                                                                       | `null`       | Function to reject the modal action                 |
+| `celebrate`         | `boolean`                                                                                          | `false`      | Enable confetti celebration effect                  |
+| `celebrationType`   | `"basic"`, `"random"`, `"realistic"`, `"fireworks"`, `"snow"`, `"pride"`                           | `"pride"`    | Type of celebration animation                       |
+| `template`          | `React.ReactNode` \| `(actions: { resolve, reject }) => React.ReactNode`                           | `null`       | Custom modal content with optional actions support  |
 
 ## 🌍 Global Defaults
 
