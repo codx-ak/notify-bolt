@@ -20,6 +20,8 @@ const PlaygroundSection = () => {
     timer: 0,
     timerProgressBar: false,
     focusConfirm: true,
+    celebrate: true,
+    celebrationType: "pride",
   });
 
   useEffect(() => {
@@ -111,7 +113,7 @@ const PlaygroundSection = () => {
             ))}
           </div>
 
-          <h3>⭐ Animation</h3>
+          <h3>💫 Modal Animation</h3>
           <div className="button-group">
             {[
               "slide-up",
@@ -134,6 +136,43 @@ const PlaygroundSection = () => {
                 {type}
               </button>
             ))}
+          </div>
+
+          <h3>🎉 Celebrate Animation</h3>
+          <div className="button-group">
+            <button
+              className={`option-btn ${
+                options.celebrate != true ? "active" : ""
+              }`}
+              onClick={() => {
+                setOptions({
+                  ...options,
+                  celebrate: !options.celebrate,
+                  celebrationType: "None",
+                });
+              }}
+            >
+              None
+            </button>
+            {["basic", "random", "realistic", "fireworks", "snow", "pride"].map(
+              (type) => (
+                <button
+                  key={type}
+                  className={`option-btn ${
+                    options.celebrationType === type ? "active" : ""
+                  }`}
+                  onClick={() => {
+                    setOptions({
+                      ...options,
+                      celebrate: true,
+                      celebrationType: type,
+                    });
+                  }}
+                >
+                  {type}
+                </button>
+              )
+            )}
           </div>
 
           <h3>⚙️ Buttons</h3>
@@ -218,6 +257,10 @@ const PlaygroundSection = () => {
                 <span className="switch-slider"></span>
               </label>
             </div>
+          </div>
+
+          <h3>⏱️ Timer</h3>
+          <div className="button-group" style={{ gap: "20px" }}>
             <div className="toggle-group">
               <label className="switch-label">
                 <span>Timer (5000ms)</span>
@@ -290,9 +333,11 @@ const PlaygroundSection = () => {
     showDenyButton: ${options.showDenyButton},
     showCancelButton: ${options.showCancelButton},
     showConfirmButton: ${options.showConfirmButton},
+    timer: ${options.timer},
     timerProgressBar: ${options.timerProgressBar},
     focusConfirm: ${options.focusConfirm},
-    ${options.timer ? `timer: ${options.timer},` : ""}
+    celebrate: ${options.celebrate},
+    ${options.celebrate ? `"celebrationType": ${options.celebrationType}` : ""}
   })
 `}</code>
           </pre>

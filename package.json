@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "notify-bolt": "^4.2.0",
+    "notify-bolt": "^4.3.0",
     "prismjs": "^1.30.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
