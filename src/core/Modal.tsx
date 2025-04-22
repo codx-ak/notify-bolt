@@ -4,13 +4,10 @@ import DefaultVariant from "../components/variants/DefaultVariant";
 import MinimalVariant from "../components/variants/MinimalVariant";
 import { useEffect, useRef } from "react";
 
+import Celebrate from "../components/common/Celebrate";
+
 const Modal = ({ modal }: { modal: NotifyProps }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.focus();
-    }
-  }, [modal.open]);
 
   useEffect(() => {
     if (modal.onDidOpen) modal.onDidOpen();
@@ -62,31 +59,36 @@ const Modal = ({ modal }: { modal: NotifyProps }) => {
   // Handles the modal dismiss logic when clicking close
   const handleClose = () => (modal.allowOutsideClick ? modal.reject?.() : null);
   return (
-    <div
-      ref={containerRef}
-      tabIndex={-1}
-      className={`notify-overlay ${modal.open ? "open" : ""}`}
-      onClick={handleClose}
-      style={modal.style?.overlay ?? {}}
-    >
+    <>
+      <Celebrate modal={modal} />
       <div
-        className={`notify-container notify-${modal.size} ${modal.animation} ${
-          modal.themeMode == "dark" ? "notify-theme-dark" : ""
-        } ${modal.variant == "minimal" ? `notify-border-${modal.status}` : ""}`}
-        style={modal.style?.modal ?? {}}
-        onClick={(e) => e.stopPropagation()}
+        ref={containerRef}
+        tabIndex={-1}
+        className={`notify-overlay ${modal.open ? "open" : ""}`}
+        onClick={handleClose}
+        style={modal.style?.overlay ?? {}}
       >
-        {typeof modal.template === "function"
-          ? modal.template({ resolve: modal.resolve!, reject: modal.reject! })
-          : modal.template ?? renderModalVariant()}
-        {modal.timerProgressBar && (modal.timer ?? 0) > 0 && (
-          <div
-            className="notify-progress-bar"
-            style={{ animationDuration: `${modal.timer}ms` }}
-          />
-        )}
+        <div
+          className={`notify-container notify-${modal.size} ${
+            modal.animation
+          } ${modal.themeMode == "dark" ? "notify-theme-dark" : ""} ${
+            modal.variant == "minimal" ? `notify-border-${modal.status}` : ""
+          }`}
+          style={modal.style?.modal ?? {}}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {typeof modal.template === "function"
+            ? modal.template({ resolve: modal.resolve!, reject: modal.reject! })
+            : modal.template ?? renderModalVariant()}
+          {modal.timerProgressBar && (modal.timer ?? 0) > 0 && (
+            <div
+              className="notify-progress-bar"
+              style={{ animationDuration: `${modal.timer}ms` }}
+            />
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -88,6 +88,8 @@ export const showNotify = (
               typeof props.template === "function"
                 ? props.template
                 : props.template ?? null,
+            celebrate: props?.celebrate ?? false,
+            celebrationType: props?.celebrationType ?? "pride",
             onDidOpen: props.onDidOpen,
             onWillClose: props.onWillClose,
             resolve: (type: "confirm" | "deny") => handleClose(type),

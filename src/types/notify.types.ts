@@ -87,6 +87,14 @@ export interface NotifyProps extends NotifyGlobalConfigProps {
   focusConfirm?: boolean;
   showDenyButton?: boolean;
   denyButtonText?: string | React.ReactNode;
+  celebrate?: boolean;
+  celebrationType?:
+    | "basic"
+    | "random"
+    | "realistic"
+    | "fireworks"
+    | "snow"
+    | "pride";
   template?:
     | ((actions: {
         resolve: (type: "confirm" | "deny") => void;
