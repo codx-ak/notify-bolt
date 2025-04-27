@@ -1,8 +1,15 @@
 # 📦 Changelog
 
+## `v4.3.1` — _Apr 27, 2025_
+
+### Updated
+
+- Removed property tables from the demo page.
+- Added a link to Notify Bolt Playground.
+
 ## `v4.3.0` — _Apr 20, 2025_
 
-## ✨ Added
+### ✨ Added
 
 - Added `celebrate` (boolean) to show confetti.
 - Added `celebrationType` to choose confetti style (basic, random, realistic, fireworks, snow, pride, etc.).
