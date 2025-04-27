@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { showNotify, NotifyProps } from "notify-bolt";
+import { showNotify } from "notify-bolt";
 import Prism from "prismjs";
 
 const PlaygroundSection = () => {
@@ -28,22 +28,22 @@ const PlaygroundSection = () => {
     Prism.highlightAll();
   }, [options]);
   return (
-    <section className="playground-section">
-      <h2 className="playground-heading">🧪 Playground</h2>
-      <p className="playground-subtitle">
+    <section className="py-[2rem]">
+      <h2 className="title">🧪 Playground</h2>
+      <p className="subtitle">
         Experiment with different settings to preview the notification modal in
         real time.
       </p>
 
       {/* Status Section */}
-      <div className="playground-row">
-        <div className="playground-options">
-          <h3>📦 Variant</h3>
-          <div className="button-group">
+      <div className="flex flex-wrap gap-8 mb-[2.5rem] items-start pb-[2rem]">
+        <div className="max-w-[450px]">
+          <h6>📦 Variant</h6>
+          <div className="btn-group">
             {["classic", "minimal", "default"].map((type) => (
               <button
                 key={type}
-                className={`option-btn ${
+                className={`btn btn-secondary ${
                   options.variant === type ? "active" : ""
                 }`}
                 onClick={() => {
@@ -59,12 +59,12 @@ const PlaygroundSection = () => {
             ))}
           </div>
 
-          <h3>📂 Icon Type</h3>
-          <div className="button-group">
+          <h6>📂 Icon Type</h6>
+          <div className="btn-group">
             {["classic", "outline"].map((type) => (
               <button
                 key={type}
-                className={`option-btn ${
+                className={`btn btn-secondary ${
                   options.iconType === type ? "active" : ""
                 }`}
                 onClick={() => {
@@ -79,12 +79,12 @@ const PlaygroundSection = () => {
             ))}
           </div>
 
-          <h3>🎨 Status</h3>
-          <div className="button-group">
+          <h6>🎨 Status</h6>
+          <div className="btn-group">
             {["success", "error", "info", "warning", "default"].map((type) => (
               <button
                 key={type}
-                className={`option-btn ${
+                className={`btn btn-secondary ${
                   options.status === type ? "active" : ""
                 }`}
                 onClick={() => {
@@ -96,12 +96,12 @@ const PlaygroundSection = () => {
             ))}
           </div>
 
-          <h3>⚙️ Size</h3>
-          <div className="button-group">
+          <h6>⚙️ Size</h6>
+          <div className="btn-group">
             {["xs", "sm", "md", "lg"].map((type) => (
               <button
                 key={type}
-                className={`option-btn ${
+                className={`btn btn-secondary ${
                   options.size === type ? "active" : ""
                 }`}
                 onClick={() => {
@@ -113,8 +113,8 @@ const PlaygroundSection = () => {
             ))}
           </div>
 
-          <h3>💫 Modal Animation</h3>
-          <div className="button-group">
+          <h6>💫 Modal Animation</h6>
+          <div className="btn-group">
             {[
               "slide-up",
               "slide-down",
@@ -126,7 +126,7 @@ const PlaygroundSection = () => {
             ].map((type) => (
               <button
                 key={type}
-                className={`option-btn ${
+                className={`btn btn-secondary ${
                   options.animation === type ? "active" : ""
                 }`}
                 onClick={() => {
@@ -138,10 +138,10 @@ const PlaygroundSection = () => {
             ))}
           </div>
 
-          <h3>🎉 Celebrate Animation</h3>
-          <div className="button-group">
+          <h6>🎉 Celebrate Animation</h6>
+          <div className="btn-group">
             <button
-              className={`option-btn ${
+              className={`btn btn-secondary ${
                 options.celebrate != true ? "active" : ""
               }`}
               onClick={() => {
@@ -158,7 +158,7 @@ const PlaygroundSection = () => {
               (type) => (
                 <button
                   key={type}
-                  className={`option-btn ${
+                  className={`btn btn-secondary ${
                     options.celebrationType === type ? "active" : ""
                   }`}
                   onClick={() => {
@@ -175,9 +175,9 @@ const PlaygroundSection = () => {
             )}
           </div>
 
-          <h3>⚙️ Buttons</h3>
-          <div className="button-group" style={{ gap: "20px" }}>
-            <div className="toggle-group">
+          <h6>⚙️ Buttons</h6>
+          <div className="btn-group" style={{ gap: "20px" }}>
+            <div className="btn-group">
               <label className="switch-label">
                 <span>Confirm Button</span>
                 <input
@@ -193,7 +193,7 @@ const PlaygroundSection = () => {
                 <span className="switch-slider"></span>
               </label>
             </div>
-            <div className="toggle-group">
+            <div className="btn-group">
               <label className="switch-label">
                 <span>Deny Button</span>
                 <input
@@ -209,7 +209,7 @@ const PlaygroundSection = () => {
                 <span className="switch-slider"></span>
               </label>
             </div>
-            <div className="toggle-group">
+            <div className="btn-group">
               <label className="switch-label">
                 <span>Close Icon</span>
                 <input
@@ -225,7 +225,7 @@ const PlaygroundSection = () => {
                 <span className="switch-slider"></span>
               </label>
             </div>
-            <div className="toggle-group">
+            <div className="btn-group">
               <label className="switch-label">
                 <span>Cancel Button</span>
                 <input
@@ -241,7 +241,7 @@ const PlaygroundSection = () => {
                 <span className="switch-slider"></span>
               </label>
             </div>
-            <div className="toggle-group">
+            <div className="btn-group">
               <label className="switch-label">
                 <span>Focus Confirm Button</span>
                 <input
@@ -259,9 +259,9 @@ const PlaygroundSection = () => {
             </div>
           </div>
 
-          <h3>⏱️ Timer</h3>
-          <div className="button-group" style={{ gap: "20px" }}>
-            <div className="toggle-group">
+          <h6>⏱️ Timer</h6>
+          <div className="btn-group" style={{ gap: "20px" }}>
+            <div className="btn-group">
               <label className="switch-label">
                 <span>Timer (5000ms)</span>
                 <input
@@ -277,7 +277,7 @@ const PlaygroundSection = () => {
                 <span className="switch-slider"></span>
               </label>
             </div>
-            <div className="toggle-group">
+            <div className="btn-group">
               <label className="switch-label">
                 <span>Timer Progress Bar</span>
                 <input
@@ -296,11 +296,11 @@ const PlaygroundSection = () => {
           </div>
         </div>
 
-        <div className="playground-code">
-          <div className="code-container">
-            <h4>📌 Example Code</h4>
+        <div className="bg-[#f8f9fa] rounder-[8px] p-[1rem] text-[0.9rem] overflow-x-auto place-self-center flex-1">
+          <div className="flex justify-between items-center mb-[1rem]">
+            <h4 className="font-[600] my-[1rem]">📌 Example Code</h4>
 
-            <div className="toggle-group">
+            <div className="btn-group">
               <label className="switch-label">
                 <span>Mode </span>
                 <input
@@ -318,17 +318,17 @@ const PlaygroundSection = () => {
               </label>
             </div>
           </div>
-          <pre className="code-block" style={{ textAlign: "start" }}>
+          <pre className="code-block">
             <code className="language-javascript">{`
   showNotify({
-    title: ${options.title},
-    message: ${options.message},
-    variant: ${options.variant},
-    themeMode: ${options.themeMode},
-    status: ${options.status},
+    title: "${options.title}",
+    message: "${options.message}",
+    variant: "${options.variant}",
+    themeMode: "${options.themeMode}",
+    status: "${options.status}",
     allowOutsideClick: ${options.allowOutsideClick},
-    animation: ${options.animation},
-    size: ${options.size},
+    animation: "${options.animation}",
+    size: "${options.size}",
     showCancelIcon: ${options.showCloseIcon},
     showDenyButton: ${options.showDenyButton},
     showCancelButton: ${options.showCancelButton},
@@ -337,14 +337,16 @@ const PlaygroundSection = () => {
     timerProgressBar: ${options.timerProgressBar},
     focusConfirm: ${options.focusConfirm},
     celebrate: ${options.celebrate},
-    ${options.celebrate ? `"celebrationType": ${options.celebrationType}` : ""}
+    ${
+      options.celebrate ? `"celebrationType": "${options.celebrationType}"` : ""
+    }
   })
 `}</code>
           </pre>
-          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+          <div className="text-center mt-[2rem]">
             <button
-              className="btn primary"
-              onClick={() => showNotify(options as NotifyProps)}
+              className="btn btn-primary"
+              onClick={() => showNotify(options)}
             >
               Preview Modal
             </button>

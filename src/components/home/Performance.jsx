@@ -26,30 +26,35 @@ const PerformanceSection = () => {
   }, []);
 
   return (
-    <section className="performance-section">
-      <div className="container">
-        <h3>🚀 Performance & Bundle Size</h3>
+    <section className="py-[2rem]">
+      <div className="my-0 mx-auto text-center">
+        <h3 className="title">🚀 Performance & Bundle Size</h3>
         <p className="subtitle">
           Built with performance in mind. Lightweight, fast, and efficient.
         </p>
 
-        <div className="performance-grid">
-          <div className="performance-box">
-            <div className="icon">⚡</div>
-            <div style={{ flex: 1 }}>
-              <h3>Lightning Fast</h3>
-              <p>
+        <div className="flex flex-wrap gap-[30px] text-left justify-center">
+          <div className="w-[100%] max-w-[340px] flex items-start gap-[15px] bg-white p-[20px] rounded-[10px] shadow-card-2">
+            <div className="text-[28px]">⚡</div>
+            <div className="flex-1">
+              <h3 className="text-[20px] text-primary mb-[6px] text-center w-[100%] font-[700] mt-[1rem]">
+                Lightning Fast
+              </h3>
+              <p className="text-[0.8rem] text-subtitle text-center py-[1rem]">
                 Optimized to show notifications instantly with minimal
                 footprint.
               </p>
             </div>
           </div>
 
-          <div className="performance-box">
-            <div className="icon">📦</div>
-            <div style={{ flex: 1 }}>
-              <h3>Bundle Size</h3>
-              <p>
+          <div className="w-[100%] max-w-[340px] flex items-start gap-[15px] bg-white p-[20px] rounded-[10px] shadow-card-2">
+            <div className="text-[28px]">📦</div>
+            <div className="flex-1">
+              <h3 className="text-[20px] text-primary mb-[6px] text-center w-[100%] font-[700] mt-[1rem]">
+                Bundle Size
+              </h3>
+
+              <p className="text-[0.8rem] text-subtitle text-center py-[1rem]">
                 {error
                   ? "Error loading bundle size"
                   : bundleSize

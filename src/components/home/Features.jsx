@@ -16,23 +16,9 @@ const features = [
   "Zero Dependencies",
   "Headless Hook Support",
 ];
-
-export const Features = () => (
-  <section className="features-section">
-    <h2 className="features-heading">
-      What Makes <span className="highlight">notify-bolt</span> Stand Out?
-    </h2>
-    <div className="features-grid">
-      {features.map((feature, index) => (
-        <FeatureItem key={index}>{feature}</FeatureItem>
-      ))}
-    </div>
-  </section>
-);
-
 const FeatureItem = ({ children }) => (
-  <div className="feature-item">
-    <span className="feature-icon">
+  <div className="flex items-center gap-3 font-[600] text-primary text-left">
+    <span className="flex items-center justify-center bg-[#e9f8f1] rounded-2xl p-[0.4rem]">
       <svg
         viewBox="0 0 24 24"
         width="20"
@@ -49,3 +35,18 @@ const FeatureItem = ({ children }) => (
     <span className="feature-text">{children}</span>
   </div>
 );
+
+const FeaturesSection = () => (
+  <section className="animate-fade-in duration-[1.1s] py-[2rem]">
+    <h2 className="title text-primary text-[1.5rem]">
+      What Makes <span className="text-secondary">notify-bolt</span> Stand Out?
+    </h2>
+    <div className=" grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5">
+      {features.map((feature, index) => (
+        <FeatureItem key={index}>{feature}</FeatureItem>
+      ))}
+    </div>
+  </section>
+);
+
+export default FeaturesSection;

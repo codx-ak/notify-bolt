@@ -1,12 +1,8 @@
-import React, { useEffect } from "react";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import { Features } from "./components/Features";
-import SetupSection from "./components/Steps";
+import React, { useEffect, useState } from "react";
+import Footer from "./components/common/Footer";
 import Prism from "prismjs";
-import PlaygroundSection from "./components/Playground";
-import PerformanceSection from "./components/Performance";
-import ThanksSection from "./components/Thanks";
+import HomePage from "./Pages/Home";
+import DocPage from "./Pages/Doc";
 import { showNotify } from "notify-bolt";
 
 const App = () => {
@@ -32,15 +28,37 @@ const App = () => {
       });
     }, 1000);
   }, []);
+
+  const getPageFromQuery = () => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("page") === "docs" ? "docs" : "home";
+  };
+
+  const [page, setPage] = useState(getPageFromQuery());
+
+  const navigate = (targetPage) => {
+    setPage(targetPage);
+    const query = targetPage === "docs" ? "?page=docs" : "";
+    window.history.pushState({}, "", `${window.location.pathname}${query}`);
+  };
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setPage(getPageFromQuery());
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
   return (
-    <div className="app">
-      <Header />
-      <Features />
-      <SetupSection />
-      <PlaygroundSection />
-      <PerformanceSection />
-      <ThanksSection />
-      <Footer />
+    <div className="max-w-[960px] my-0 mx-auto py-[2rem] px-[1rem] text-center sm:px-[0.5rem] sm:py-[1rem]">
+      {page === "home" && <HomePage goToDocs={() => navigate("docs")} />}
+      {page === "docs" && <DocPage goToHome={() => navigate("home")} />}
+      <Footer
+        goToDocs={() => navigate("docs")}
+        goToHome={() => navigate("home")}
+      />
     </div>
   );
 };

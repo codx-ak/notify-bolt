@@ -11,25 +11,30 @@ const SetupSection = () => {
       status: "warning",
     });
   };
+
   return (
-    <section className="setup-section">
-      <h2 className="setup-heading">
+    <section className="py-[2rem]">
+      <h2 className="title">
         🚀 Get Started with <code>notify-bolt</code>
       </h2>
-      <p className="setup-subtitle">
+      <p className="subtitle">
         Follow these simple steps to install and use{" "}
         <strong>notify-bolt</strong> in your project.
       </p>
 
-      <div className="setup-step">
-        <h3 className="step-title">1. Install the package</h3>
+      <div className="px-[1rem] py-[1.5rem] rounded-[12px] mb-[2rem] text-left shadow-card transition-transform hover:translate-y-[-2px] bg-btn-secondary">
+        <h3 className="text-[1rem] font-[600] text-primary mb-[0.75rem] mt-0">
+          1. Install the package
+        </h3>
         <pre className="code-block">
           <code className="language-bash">npm install notify-bolt</code>
         </pre>
       </div>
 
-      <div className="setup-step">
-        <h3 className="step-title">2. Import and use</h3>
+      <div className="px-[1rem] py-[1.5rem] rounded-[12px] mb-[2rem] text-left shadow-card transition-transform hover:translate-y-[-2px] bg-btn-secondary">
+        <h3 className="text-[1rem] font-[600] text-primary mb-[0.75rem] mt-0">
+          2. Import and use
+        </h3>
         <pre className="code-block">
           <code className="language-javascript">{`import { showNotify } from 'notify-bolt';
 
@@ -44,16 +49,16 @@ showNotify({
         </pre>
       </div>
 
-      <div className="setup-cta">
+      <div className="mt-[2rem] flex justify-center flex-wrap gap-4">
         <a
-          className="btn primary"
+          className="btn btn-primary"
           href="https://www.npmjs.com/package/notify-bolt"
           target="_blank"
           rel="noopener noreferrer"
         >
           View on npm
         </a>
-        <button className="btn secondary" onClick={handleOpen}>
+        <button className="btn btn-secondary" onClick={handleOpen}>
           Try the Demo
         </button>
       </div>
