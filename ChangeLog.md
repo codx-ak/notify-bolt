@@ -1,5 +1,16 @@
 # 📦 Changelog
 
+## `v4.3.2` — _Apr 27, 2025_
+
+### Fixed
+
+- Updated notification modal sizes:
+  - `notify-xs`: max-width set to `350px`.
+  - `notify-sm`: max-width set to `420px`.
+  - `notify-md`: max-width set to `470px`.
+  - `notify-lg`: max-width set to `550px`.
+- Added `box-sizing: border-box` for better layout control.
+
 ## `v4.3.1` — _Apr 27, 2025_
 
 ### Updated

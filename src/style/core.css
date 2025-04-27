@@ -40,6 +40,7 @@ body.notify-lock .notify-overlay {
   transform: translateY(20px);
   animation-fill-mode: forwards;
   animation-duration: 0.4s;
+  box-sizing: border-box;
 }
 
 /* Slide up (from bottom) */
@@ -147,24 +148,24 @@ body.notify-lock .notify-overlay {
 
 /* Size variants */
 .notify-xs {
-  max-width: 300px;
+  max-width: 350px;
 }
 .notify-sm {
-  max-width: 400px;
+  max-width: 420px;
 }
 .notify-md {
-  max-width: 500px;
+  max-width: 470px;
 }
 .notify-lg {
-  max-width: 600px;
+  max-width: 550px;
 }
 
 .notify-cancel-icon {
   cursor: pointer;
   padding: 0.3rem;
   display: flex;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   object-fit: contain;
   justify-content: center;
   align-items: center;
@@ -172,6 +173,7 @@ body.notify-lock .notify-overlay {
   color: var(--notify-text-secondary);
   border-radius: 50%;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Buttons */
