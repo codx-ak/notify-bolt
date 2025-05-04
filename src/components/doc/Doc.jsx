@@ -93,7 +93,7 @@ const handleClick = () => {
             <p className="subtitle text-[0.9rem] text-start mb-3">
               {prop.description}
             </p>
-            <p className="subtitle text-[0.9rem] text-start mt-0 mb-5">
+            <p className="subtitle text-[0.9rem] text-start mt-0 mb-5 flex flex-wrap items-center gap-0.5">
               Accepted Types:
               {prop.types.map((item, index) => (
                 <>
