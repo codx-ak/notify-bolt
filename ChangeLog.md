@@ -1,5 +1,11 @@
 # 📦 Changelog
 
+## `v4.3.3` — _Jun 25, 2025_
+
+### Updated
+
+- Improved support for global style overrides and theming.
+
 ## `v4.3.2` — _Apr 27, 2025_
 
 ### Fixed

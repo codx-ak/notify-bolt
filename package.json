@@ -1,6 +1,6 @@
 {
   "name": "notify-bolt",
-  "version": "4.3.2",
+  "version": "4.3.3",
   "description": "A customizable React alert and modal system with theme support, multiple variants, and global configuration.",
   "author": "Ak Moorthi",
   "license": "MIT",
