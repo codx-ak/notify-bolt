@@ -1,6 +1,13 @@
 import { NotifyProps } from "../../types/notify.types";
 
 const ButtonContainer = ({ modal }: { modal: NotifyProps }) => {
+  const buttonStyles = {
+    fontFamily:
+      modal.style?.modal?.fontFamily ||
+      modal.style?.button?.fontFamily ||
+      '"Poppins", sans-serif',
+    ...modal.style?.button,
+  };
   return (
     <div
       className={"notify-button-container"}
@@ -12,7 +19,7 @@ const ButtonContainer = ({ modal }: { modal: NotifyProps }) => {
             modal.focusConfirm ? "cancel" : `${modal.status}`
           }`}
           onClick={() => modal.reject?.()}
-          style={modal.style?.button ?? {}}
+          style={buttonStyles}
         >
           {modal.cancelButtonText}
         </button>
@@ -21,7 +28,7 @@ const ButtonContainer = ({ modal }: { modal: NotifyProps }) => {
         <button
           className="notify-button notify-deny"
           onClick={() => modal.resolve?.("deny")}
-          style={modal.style?.button ?? {}}
+          style={buttonStyles}
         >
           {modal.denyButtonText}
         </button>
@@ -33,7 +40,7 @@ const ButtonContainer = ({ modal }: { modal: NotifyProps }) => {
             modal.focusConfirm ? `${modal.status}` : "cancel"
           }`}
           onClick={() => modal.resolve?.("confirm")}
-          style={modal.style?.button ?? {}}
+          style={buttonStyles}
         >
           {modal.confirmButtonText}
         </button>

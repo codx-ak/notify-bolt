@@ -74,7 +74,11 @@ const Modal = ({ modal }: { modal: NotifyProps }) => {
           } ${modal.themeMode == "dark" ? "notify-theme-dark" : ""} ${
             modal.variant == "minimal" ? `notify-border-${modal.status}` : ""
           }`}
-          style={modal.style?.modal ?? {}}
+          style={{
+            fontFamily:
+              modal.style?.modal?.fontFamily || '"Poppins", sans-serif',
+            ...modal.style?.modal,
+          }}
           onClick={(e) => e.stopPropagation()}
         >
           {typeof modal.template === "function"

@@ -29,7 +29,6 @@ body.notify-lock .notify-overlay {
 
 /* Modal container */
 .notify-container {
-  font-family: "Poppins", sans-serif;
   background: var(--notify-bg-color);
   color: var(--notify-text-primary);
   padding: 15px;

@@ -64,16 +64,20 @@ export const showNotify = (
             title: props.title || "",
             message: props.message || "",
             status: props.status || "default",
-            variant: props.variant ?? "default",
+            variant: props.variant ?? defaults.variant,
             size: props.size ?? defaults.defaultSize,
             icon: props.icon ?? props.status,
-            iconType: props?.iconType ?? "classic",
-            showConfirmButton: props.showConfirmButton,
-            confirmButtonText: props.confirmButtonText ?? "Okay",
-            showCancelButton: props.showCancelButton,
-            cancelButtonText: props.cancelButtonText ?? "Cancel",
-            showCloseIcon: props.showCloseIcon,
-            animation: props.animation ?? "slide-up",
+            iconType: props?.iconType ?? defaults.iconType,
+            showConfirmButton:
+              props.showConfirmButton ?? defaults.showConfirmButton,
+            confirmButtonText:
+              props.confirmButtonText ?? defaults.confirmButtonText,
+            showCancelButton:
+              props.showCancelButton ?? defaults.showCancelButton,
+            cancelButtonText:
+              props.cancelButtonText ?? defaults.cancelButtonText,
+            showCloseIcon: props.showCloseIcon ?? defaults.showCloseIcon,
+            animation: props.animation ?? defaults.animation,
             closeIcon: props.closeIcon ?? defaults.closeIcon,
             style: { ...defaults.style, ...props.style },
             themeMode: props.themeMode ?? defaults.themeMode,
@@ -82,14 +86,14 @@ export const showNotify = (
             timer: props.timer,
             timerProgressBar: props.timerProgressBar ?? false,
             focusConfirm: props.focusConfirm ?? true,
-            denyButtonText: props.denyButtonText ?? "Deny",
-            showDenyButton: props.showDenyButton ?? false,
+            denyButtonText: props.denyButtonText ?? defaults.denyButtonText,
+            showDenyButton: props.showDenyButton ?? defaults.showDenyButton,
             template:
               typeof props.template === "function"
                 ? props.template
                 : props.template ?? null,
-            celebrate: props?.celebrate ?? false,
-            celebrationType: props?.celebrationType ?? "pride",
+            celebrate: props?.celebrate ?? defaults.celebrate,
+            celebrationType: props?.celebrationType ?? defaults.celebrationType,
             onDidOpen: props.onDidOpen,
             onWillClose: props.onWillClose,
             resolve: (type: "confirm" | "deny") => handleClose(type),

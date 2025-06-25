@@ -14,6 +14,15 @@ export type NotifyVariantTypes = "classic" | "default" | "minimal";
 // icons types
 export type NotifyIconTypes = "classic" | "outline";
 
+// icons types
+type NotifyCelebrationTypes =
+  | "basic"
+  | "random"
+  | "realistic"
+  | "fireworks"
+  | "snow"
+  | "pride";
+
 // animations for modal
 type NotifyAnimationTypes =
   | "fade"
@@ -61,8 +70,19 @@ export interface NotifyGlobalConfigProps {
   allowOutsideClick?: boolean;
   defaultSize?: NotifySizeTypes;
   showCloseIcon?: boolean;
+  showCancelButton?: boolean;
+  showConfirmButton?: boolean;
+  showDenyButton?: boolean;
+  celebrate?: boolean;
+  celebrationType?: NotifyCelebrationTypes;
   closeIcon?: React.ReactNode | string;
   style?: NotifyStyleTypes;
+  variant?: NotifyVariantTypes;
+  animation?: NotifyAnimationTypes;
+  confirmButtonText?: string | React.ReactNode;
+  cancelButtonText?: string | React.ReactNode;
+  denyButtonText?: string | React.ReactNode;
+  iconType?: NotifyIconTypes;
 }
 
 /**
@@ -88,13 +108,7 @@ export interface NotifyProps extends NotifyGlobalConfigProps {
   showDenyButton?: boolean;
   denyButtonText?: string | React.ReactNode;
   celebrate?: boolean;
-  celebrationType?:
-    | "basic"
-    | "random"
-    | "realistic"
-    | "fireworks"
-    | "snow"
-    | "pride";
+  celebrationType?: NotifyCelebrationTypes;
   template?:
     | ((actions: {
         resolve: (type: "confirm" | "deny") => void;
