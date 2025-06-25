@@ -83,6 +83,10 @@ export interface NotifyGlobalConfigProps {
   cancelButtonText?: string | React.ReactNode;
   denyButtonText?: string | React.ReactNode;
   iconType?: NotifyIconTypes;
+  icons?: Record<
+    NotifyStatusTypes,
+    NotifyStatusTypes | string | React.ReactNode
+  >;
 }
 
 /**

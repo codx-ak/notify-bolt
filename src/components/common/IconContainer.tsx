@@ -5,6 +5,7 @@ import {
   getVariantClassNames,
   isStatusType,
 } from "../../utils/Icons.utils";
+import { getNotifyDefaults } from "../../core/notifyGlobals";
 
 const IconContainer = ({ modal }: { modal: NotifyProps }) => {
   const {
@@ -17,9 +18,12 @@ const IconContainer = ({ modal }: { modal: NotifyProps }) => {
 
   const containerStyle = getVariantClassNames(variant);
 
+  const notifyDefault = getNotifyDefaults();
+  const notifyIcon = icon ?? notifyDefault?.icons?.[status];
+
   // Case 1: If icon is a known status string
-  if (isStatusType(icon)) {
-    const iconComponent = getIconComponent(iconType, icon, status);
+  if (isStatusType(notifyIcon)) {
+    const iconComponent = getIconComponent(iconType, notifyIcon, status);
     return (
       <div className={containerStyle} style={{ ...style?.icon }}>
         {iconComponent}
@@ -28,13 +32,14 @@ const IconContainer = ({ modal }: { modal: NotifyProps }) => {
   }
 
   // 2. If icon is a string: check if it's an image URL
-  if (typeof icon === "string") {
-    const isURL = icon.startsWith("http://") || icon.startsWith("https://");
+  if (typeof notifyIcon === "string") {
+    const isURL =
+      notifyIcon.startsWith("http://") || notifyIcon.startsWith("https://");
     return (
       <div className={containerStyle}>
         {isURL ? (
           <img
-            src={icon}
+            src={notifyIcon}
             alt="modal-icon"
             style={{
               width: "100%",
@@ -44,17 +49,20 @@ const IconContainer = ({ modal }: { modal: NotifyProps }) => {
             }}
           />
         ) : (
-          <span style={{ fontSize: 40, ...style?.icon }}>{icon}</span>
+          <span style={{ fontSize: 40, ...style?.icon }}>{notifyIcon}</span>
         )}
       </div>
     );
   }
 
   // Case 3: If icon is JSX/ReactNode (custom component)
-  if (React.isValidElement(icon)) {
+  if (React.isValidElement(notifyIcon)) {
     return (
-      <div className={containerStyle} style={{ ...style?.icon }}>
-        {icon}
+      <div
+        className={containerStyle}
+        style={{ overflow: "hidden", ...style?.icon }}
+      >
+        {notifyIcon}
       </div>
     );
   }

@@ -22,6 +22,7 @@
   align-items: center;
   width: 100%;
   min-height: 125px;
+  max-height: 200px;
 }
 
 .notify-default-message {
@@ -54,6 +55,7 @@
 .notify-minimal-icon-container {
   place-self: center;
   flex: 0.5;
+  max-height: 200px;
 }
 
 .notify-minimal-message {
@@ -121,6 +123,7 @@
   align-items: center;
   width: 100%;
   min-height: 125px;
+  max-height: 200px;
 }
 
 .notify-classic-message {
