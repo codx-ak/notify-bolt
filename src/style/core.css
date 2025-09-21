@@ -1,0 +1,261 @@
+body.notify-lock {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+body.notify-lock .notify-overlay {
+  pointer-events: auto;
+}
+
+/* Overlay */
+.notify-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--notify-overlay-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999999;
+}
+
+.notify-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal container */
+.notify-container {
+  background: var(--notify-bg-color);
+  color: var(--notify-text-primary);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px var(--notify-shadow);
+  width: 100%;
+  position: relative;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+  animation-duration: 0.4s;
+  box-sizing: border-box;
+}
+
+/* Slide up (from bottom) */
+.slide-up {
+  animation-name: notify-slide-up;
+}
+@keyframes notify-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide down (from top) */
+.slide-down {
+  animation-name: notify-slide-down;
+}
+@keyframes notify-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from left */
+.slide-left {
+  animation-name: notify-slide-left;
+}
+@keyframes notify-slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+.slide-right {
+  animation-name: notify-slide-right;
+}
+@keyframes notify-slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*  Fade In  */
+.fade {
+  animation-name: notify-fade;
+}
+@keyframes notify-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*  Zoom in  */
+.zoom-in {
+  animation-name: notify-zoom-in;
+}
+@keyframes notify-zoom-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*  Zoom Out  */
+.zoom-out {
+  animation-name: notify-zoom-out;
+}
+@keyframes notify-zoom-out {
+  0% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Size variants */
+.notify-xs {
+  max-width: 350px;
+}
+.notify-sm {
+  max-width: 420px;
+}
+.notify-md {
+  max-width: 470px;
+}
+.notify-lg {
+  max-width: 550px;
+}
+
+.notify-cancel-icon {
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--notify-icon-bg);
+  color: var(--notify-text-secondary);
+  border-radius: 50%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+.notify-button {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  border: none;
+  min-width: 100px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.notify-button:focus {
+  border: none;
+  outline: none;
+}
+
+.notify-button-success {
+  background-color: var(--notify-color-success);
+  color: var(--notify-text-white);
+}
+.notify-button-error {
+  background-color: var(--notify-color-error);
+  color: var(--notify-text-white);
+}
+.notify-button-info {
+  background-color: var(--notify-color-info);
+  color: var(--notify-text-white);
+}
+.notify-button-warning {
+  background-color: var(--notify-color-warning);
+  color: var(--notify-text-white);
+}
+.notify-button-default {
+  background-color: var(--notify-color-default);
+  color: var(--notify-text-white);
+}
+
+.notify-button-cancel {
+  background-color: var(--notify-button-bg);
+  color: var(--notify-button-text);
+}
+.notify-button-cancel:hover {
+  background-color: var(--notify-divider-color);
+}
+
+.notify-deny {
+  background-color: var(--notify-color-warning);
+  color: var(--notify-text-white);
+}
+.notify-deny:hover {
+  opacity: 0.9;
+}
+
+/* Button Container */
+.notify-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.notify-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  border-radius: 6px;
+  background-color: var(--notify-color-default);
+  width: 100%;
+  animation-name: notifyProgress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes notifyProgress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

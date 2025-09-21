@@ -1,0 +1,59 @@
+# Ignore build configs and scripts
+.eslintrc*
+.prettierrc*
+.babelrc*
+.jest.config.js
+.postcssrc.js
+*.config.js
+*.config.ts
+rollup.config.*
+vite.config.*
+webpack.config.*
+babel.config.*
+tsconfig.json
+tsconfig.*.json
+postcss.config.*
+
+
+# Ignore source code
+src/
+tests/
+example/
+stories/
+.storybook/
+
+# Ignore dev tools and settings
+node_modules/
+*.log
+*.tsbuildinfo
+*.test.tsx
+*.test.ts
+coverage/
+.vscode/
+.idea/
+.env
+.env.*
+.yarn/
+.pnp.*
+.cache/
+*.tgz
+*.lock
+
+# Ignore local or temporary files
+*.swp
+.DS_Store
+Thumbs.db
+.cache/
+dist/**/*.map
+dist/**/*.tsbuildinfo
+
+# Ignore markdowns not intended for npm
+CHANGELOG.md
+CONTRIBUTING.md
+
+# Ignore dotlottie or lottie source assets if not required
+assets/
+public/
+
+# Allow only built output and type declarations
+!dist/

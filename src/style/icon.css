@@ -1,0 +1,262 @@
+/* ========================
+   Classic Icon Styles
+======================== */
+
+/* Wrapper */
+.classic-success-icon-wrapper,
+.classic-default-icon-wrapper,
+.classic-error-icon-wrapper,
+.classic-info-icon-wrapper,
+.classic-warning-icon-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjust size for large icons */
+.classic-success-icon-wrapper.large,
+.classic-default-icon-wrapper.large,
+.classic-error-icon-wrapper.large,
+.classic-info-icon-wrapper.large,
+.classic-warning-icon-wrapper.large {
+  width: 160px;
+  height: 160px;
+}
+
+/* Circle Background Animation */
+.classic-success-icon__circle-background,
+.classic-default-icon__circle-background,
+.classic-error-icon__circle-background,
+.classic-info-icon__circle-background,
+.classic-warning-icon__circle-background {
+  transform-origin: center;
+  animation: pulseCircle 1s ease forwards;
+}
+
+/* Sparkles */
+.classic-icon__sparkle {
+  position: absolute;
+  font-size: 10px;
+  opacity: 0.8;
+  animation: sparkleTwinkle 2.5s infinite ease-in-out;
+}
+
+.classic-icon__sparkle.sparkle-1 {
+  top: 8px;
+  left: 10px;
+  animation-delay: 0s;
+}
+
+.classic-icon__sparkle.sparkle-2 {
+  top: 8px;
+  right: 14px;
+  animation-delay: 0.4s;
+}
+
+.classic-icon__sparkle.sparkle-3 {
+  bottom: 12px;
+  left: 12px;
+  animation-delay: 0.8s;
+}
+
+.classic-icon__sparkle.sparkle-4 {
+  bottom: 8px;
+  right: 10px;
+  animation-delay: 1.2s;
+}
+
+.classic-icon__sparkle.sparkle-5 {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  animation-delay: 1.6s;
+}
+
+.classic-icon__sparkle.sparkle-6 {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  animation-delay: 2s;
+}
+
+/* Checkmark Path Animation */
+.classic-success-icon__checkmark-path {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: drawCheckmark 1s ease forwards;
+}
+
+/* Line Path Animation */
+.classic-info-icon__line-vertical,
+.classic-info-icon__line-horizontal,
+.classic-warning-icon__line-vertical,
+.classic-warning-icon__line-horizontal {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: drawLine 1s ease forwards;
+}
+
+.classic-info-icon__line-horizontal,
+.classic-warning-icon__line-horizontal {
+  animation-delay: 0.2s;
+}
+
+.classic-info-icon__line-vertical,
+.classic-warning-icon__line-vertical {
+  animation-delay: 0.4s;
+}
+
+/* Cross Path Animation */
+.classic-error-icon__cross-path {
+  stroke-dasharray: 56;
+  stroke-dashoffset: 56;
+  animation: drawCross 1s ease forwards;
+}
+
+/* Default Question Icon */
+.classic-default-icon__question-path {
+  stroke-dasharray: 64;
+  stroke-dashoffset: 64;
+  animation: drawLine 1s ease forwards;
+}
+
+.classic-default-icon__dot {
+  animation: drawLine 1s ease forwards;
+}
+
+/* ========================
+   Outline Icon Styles
+======================== */
+
+.outline-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  position: relative;
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* Base SVG for all icons */
+.outline-svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  transform-origin: center;
+}
+
+/* Circle animation */
+.outline-circle {
+  stroke-dasharray: 389;
+  stroke-dashoffset: 389;
+  animation: drawCircle 0.6s ease-out forwards;
+}
+
+/* Path animation */
+.outline-check,
+.outline-error-line,
+.outline-info-line,
+.outline-warning-line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawLine 0.4s ease-out 0.6s forwards;
+}
+
+/* Default icon specific */
+.outline-icon--default .outline-default-question {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInQuestion 0.4s ease 0.6s forwards;
+}
+
+/* ========================
+   Shared Animations
+======================== */
+
+@keyframes pulseCircle {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes drawCheckmark {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawLine {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawCross {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes sparkleTwinkle {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.6) rotate(20deg);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeInQuestion {
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}

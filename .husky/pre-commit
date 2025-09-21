@@ -1,0 +1,7 @@
+# Run lint-staged
+echo "Running lint-staged..."
+yarn lint-staged
+
+# Run build check (existing script)
+echo "Checking types..."
+yarn type-check

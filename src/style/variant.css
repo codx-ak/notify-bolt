@@ -1,0 +1,135 @@
+/* =======================
+   DEFAULT NOTIFICATION
+======================= */
+
+.notify-default-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--notify-text-primary);
+}
+
+.notify-default-header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.notify-default-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 125px;
+  max-height: 200px;
+}
+
+.notify-default-message {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--notify-text-secondary);
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+
+/* =======================
+   MINIMAL NOTIFICATION
+======================= */
+
+.notify-minimal-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: start;
+  text-transform: capitalize;
+  color: var(--notify-text-primary);
+}
+
+.notify-minimal-header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+
+.notify-minimal-icon-container {
+  place-self: center;
+  flex: 0.5;
+  max-height: 200px;
+}
+
+.notify-minimal-message {
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  text-align: start;
+  color: var(--notify-text-secondary);
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+
+.notify-minimal-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 1rem;
+  min-height: 200px;
+}
+
+.notify-minimal-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Colored borders for status */
+.notify-border-success {
+  border-left: 5px solid var(--notify-color-success);
+}
+.notify-border-error {
+  border-left: 5px solid var(--notify-color-error);
+}
+.notify-border-info {
+  border-left: 5px solid var(--notify-color-info);
+}
+.notify-border-warning {
+  border-left: 5px solid var(--notify-color-warning);
+}
+.notify-border-default {
+  border-left: 5px solid var(--notify-color-default);
+}
+
+/* =======================
+   CLASSIC NOTIFICATION
+======================= */
+
+.notify-classic-title {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--notify-text-primary);
+}
+
+.notify-classic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.notify-classic-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 125px;
+  max-height: 200px;
+}
+
+.notify-classic-message {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--notify-text-secondary);
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}

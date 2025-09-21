@@ -1,0 +1,28 @@
+# Node
+node_modules/
+dist/
+*.log*
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# IDEs / Editors
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build tools
+coverage/
+.eslintcache
+
+# Temporary files
+*.bak
+*.tmp
