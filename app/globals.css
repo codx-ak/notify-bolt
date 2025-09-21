@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-poppins: "Poppins", sans-serif;
+  --font-courier: "Courier New", monospace;
+
+  /* Colors */
+  --color-primary: #482307;
+  --color-secondary: rgb(161 114 78);
+  --color-btn-primary: #12b76a;
+  --color-btn-primary-hover: #0f9e59;
+  --color-btn-secondary: #f0f0f0;
+  --color-btn-secondary-hover: #e4e4e4;
+  --color-heading: #111827;
+  --color-subtitle: #4b5563;
+  --color-link: #6366f1;
+
+  /* Shadows */
+  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-card-2: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  /* Animations */
+  --animate-slide-in: slide-in 1s ease-out both;
+  --animate-fade-in: fade-in 1s ease-in-out both;
+
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+@layer base {
+  html,
+  body {
+    background: linear-gradient(to bottom, #fff6df, #ffffff);
+    @apply m-0 p-0 box-border font-poppins text-heading bg-no-repeat bg-fixed bg-cover min-h-[100vh] transition-colors duration-300;
+  }
+
+  h5 {
+    @apply text-[1.25rem] text-primary text-start mt-[1.5rem] mb-[0.5rem] font-[600];
+  }
+  h6 {
+    @apply text-[1rem] text-primary text-start mt-[1.5rem] mb-[0.5rem] font-[500];
+  }
+}
+
+@layer components {
+  .btn {
+    @apply font-poppins px-[1.5rem] py-[0.75rem] rounded-[6px] text-[1rem] font-[600] decoration-[none] transition-colors duration-200 cursor-pointer min-w-[100px];
+  }
+
+  .btn-primary {
+    @apply border-0 bg-btn-primary text-white;
+  }
+
+  .btn-primary:hover {
+    @apply bg-btn-primary-hover;
+  }
+
+  .btn-secondary {
+    @apply border-0 bg-btn-secondary text-primary;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-btn-secondary-hover;
+  }
+
+  .btn-secondary.active {
+    @apply bg-primary text-white;
+  }
+
+  .title {
+    @apply text-[1.7rem] font-[700] text-heading mb-[1rem];
+  }
+
+  .subtitle {
+    @apply text-[1rem] text-subtitle mb-[3rem];
+  }
+
+  .code-block {
+    @apply bg-[#2d2d2d] text-[#f8f8f2] p-[1rem] rounded-[8px] overflow-x-auto font-courier text-[1rem] leading-[1.5] relative text-start;
+  }
+
+  .btn-group {
+    @apply flex flex-wrap gap-[10px];
+  }
+
+  .btn-group .btn {
+    @apply py-[0.5rem] px-[1rem] text-[0.8rem] min-w-[75px];
+  }
+
+  .switch-label {
+    @apply flex items-center justify-between font-[500] text-[0.8rem] gap-[10px] text-subtitle;
+  }
+
+  .switch-label input[type="checkbox"] {
+    @apply hidden;
+  }
+
+  .switch-slider {
+    @apply w-[42px] h-[24px] bg-[#ccc] rounded-[12px] relative transition-colors cursor-pointer;
+  }
+
+  .switch-slider::before {
+    content: "";
+    @apply absolute top-[3px] left-[3px] w-[18px] h-[18px] bg-white rounded-[50%] transition-transform;
+  }
+
+  input:checked + .switch-slider {
+    @apply bg-primary;
+  }
+
+  input:checked + .switch-slider::before {
+    @apply translate-x-[18px];
+  }
+}
+
+/* PrismJS Syntax Highlighting */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #7f848e;
+  font-style: italic;
+}
+
+.token.punctuation,
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: #abb2bf;
+}
+
+.token.keyword,
+.token.class-name {
+  color: #c678dd;
+}
+
+.token.selector,
+.token.tag {
+  color: #e06c75;
+}
+
+.token.property {
+  color: #d19a66;
+}
+
+.token.function {
+  color: #61afef;
+}
+
+.token.string {
+  color: #98c379;
+}
+
+.token.number {
+  color: #f8f8f2;
+}
+
+.token.boolean,
+.token.regex,
+.token.important {
+  color: #bd93f9;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.inserted {
+  color: #98c379;
+}
+
+.token.deleted {
+  color: #e06c75;
+}
