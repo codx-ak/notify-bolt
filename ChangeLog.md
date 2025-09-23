@@ -1,6 +1,6 @@
 # 📦 Changelog
 
-## `v1.0.0` — _Sep 21, 2025_
+## `v1.0.4` — _Sep 23, 2025_
 
 ### ✨ Initial Release
 

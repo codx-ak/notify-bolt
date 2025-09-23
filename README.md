@@ -90,15 +90,6 @@ setNotifyDefaults({
 });
 ```
 
----
-
-## 📖 Documentation
-
-For the full list of **options, props, examples, and playground**, check out the  
-👉 [Notify Bolt Playground & Docs](https://codx-ak.github.io/notify-bolt?page=docs)
-
----
-
 ## 📜 License
 
 MIT © [codx-ak](https://github.com/codx-ak)
