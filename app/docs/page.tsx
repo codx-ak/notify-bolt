@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Prism from "prismjs";
 import Image from "next/image";
 import { propsList } from "./propsList";
+import Link from "next/link";
 
 const CodeBlock = ({ code }: { code: string }) => {
   return (
@@ -21,7 +22,7 @@ const Docs = () => {
     <div>
       {/* Header */}
       <div className="flex justify-between items-center">
-        <a href="/" style={{ width: 150, height: 150 }}>
+        <Link href="/" style={{ width: 150, height: 150 }}>
           <Image
             src="/fullLogo.png"
             alt="Notify Bolt Logo"
@@ -29,7 +30,7 @@ const Docs = () => {
             height={150}
             priority
           />
-        </a>
+        </Link>
         <a
           className="text-secondary underline"
           href="https://github.com/codx-ak/notify-bolt"
