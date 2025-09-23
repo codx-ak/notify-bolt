@@ -1,10 +1,31 @@
+"use client";
 import FeaturesSection from "@/components/Features";
 import HeaderSection from "@/components/Header";
 import PerformanceSection from "@/components/Performance";
 import PlaygroundSection from "@/components/Playground";
 import SetupSection from "@/components/Setup";
+import { showNotify } from "notify-bolt";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    setTimeout(() => {
+      showNotify({
+        title: "Welcome!",
+        message: "We're glad to have you here. Enjoy exploring Notify Bolt!",
+        allowOutsideClick: true,
+        animation: "zoom-in",
+        celebrate: true,
+        celebrationType: "pride",
+        showCancelButton: false,
+        size: "sm",
+        status: "success",
+        variant: "default",
+        iconType: "classic",
+        timer: 5000,
+      });
+    }, 1000);
+  }, []);
   return (
     <>
       {/* header  */}

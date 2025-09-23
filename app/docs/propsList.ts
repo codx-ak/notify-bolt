@@ -140,7 +140,7 @@ export const propsList = [
     default: `"light"`,
     description:
       "Switches between light and dark theme modes for modal appearance.",
-    examples: [`showNotify({ themeMode: "dark" });`],
+    examples: [`setNotifyDefaults({ mode: "dark" });`],
   },
   {
     name: "animation",

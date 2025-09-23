@@ -1,6 +1,6 @@
 {
   "name": "notify-preview",
-  "version": "0.1.0",
+  "version": "1.0.4",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "next": "15.5.3",
+    "notify-bolt": "^1.0.4",
     "prismjs": "^1.30.0",
     "react": "19.1.1",
     "react-dom": "19.1.1"

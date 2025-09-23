@@ -21,12 +21,15 @@ const Docs = () => {
     <div>
       {/* Header */}
       <div className="flex justify-between items-center">
-        <Image
-          src="/fullLogo.png"
-          alt="Notify Bolt Logo"
-          width={150}
-          height={150}
-        />
+        <a href="/" style={{ width: 150, height: 150 }}>
+          <Image
+            src="/fullLogo.png"
+            alt="Notify Bolt Logo"
+            width={150}
+            height={150}
+            priority
+          />
+        </a>
         <a
           className="text-secondary underline"
           href="https://github.com/codx-ak/notify-bolt"
@@ -72,7 +75,6 @@ const handleClick = () => {
     title: "Delete this item?",
     message: "This action is permanent. Do you wish to proceed?",
     variant: "classic",
-    themeMode: "dark",
     status: "warning",
     showConfirmButton: true,
     showCancelButton: true,
@@ -142,7 +144,7 @@ const handleClick = () => {
           code={`import { setNotifyDefaults } from "notify-bolt";
 
 setNotifyDefaults({
-  themeMode: "light",
+  mode: "light",
   defaultSize: "sm",
   allowOutsideClick: true,
   style: {},

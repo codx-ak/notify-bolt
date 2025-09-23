@@ -1,3 +1,5 @@
+"use client";
+
 const features = [
   "Promise-Based Alerts",
   "Multiple Modal Variants",

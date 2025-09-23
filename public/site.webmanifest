@@ -1,0 +1,11 @@
+{
+    "name": "Notify Bolt | React Notification",
+    "short_name": "notify-bolt",
+    "start_url": "/",
+    "scope": "/",
+    "description": "A blazing-fast, customizable, and elegant modal notification system for React.",
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "display": "standalone",
+    "orientation": "portrait"
+}

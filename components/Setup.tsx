@@ -8,7 +8,6 @@ const SetupSection = () => {
       title: "Delete this item?",
       message: "This action is permanent. Do you wish to proceed?",
       variant: "default",
-      themeMode: "light",
       status: "warning",
     });
   };
@@ -46,7 +45,6 @@ showNotify({
   title: "Delete this item?",
   message: "This action is permanent. Do you wish to proceed?",
   variant: "default",
-  themeMode: "light",
   status: "warning",
 });`}</code>
         </pre>

@@ -1,0 +1,10 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Block unnecessary Next.js build files
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://codx-ak.github.io/notify-bolt/sitemap.xml
