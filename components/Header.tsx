@@ -8,7 +8,7 @@ const HeaderSection = () => {
       {/* Logo */}
       <div className="mb-0 animate-slide-in">
         <Image
-          src="/fullLogo.png"
+          src="https://codx-ak.github.io/notify-bolt/fullLogo.png"
           alt="Logo"
           width={600}
           height={250}

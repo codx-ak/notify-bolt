@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  assetPrefix: "/notify-bolt/",
+  basePath: "/notify-bolt",
+  images: {
+    unoptimized: true,
+    formats: ["image/webp"],
+    domains: ["codx-ak.github.io"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "codx-ak.github.io",
+        pathname: "/**",
+      },
+    ],
+  },
   reactStrictMode: true,
   poweredByHeader: false,
   async headers() {

@@ -24,7 +24,7 @@ const Docs = () => {
       <div className="flex justify-between items-center">
         <Link href="/" style={{ width: 150, height: 150 }}>
           <Image
-            src="/fullLogo.png"
+            src="https://codx-ak.github.io/notify-bolt/fullLogo.png"
             alt="Notify Bolt Logo"
             width={150}
             height={150}

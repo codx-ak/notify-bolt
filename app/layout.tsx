@@ -84,9 +84,14 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@codx_ak" />
 
         {/* Favicons */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link
+          rel="icon"
+          href="https://codx-ak.github.io/notify-bolt/favicon.ico"
+        />
+        <link
+          rel="manifest"
+          href="https://codx-ak.github.io/notify-bolt/site.webmanifest"
+        />
         <meta name="theme-color" content="#0000" />
 
         {/* JSON-LD Structured Data */}
