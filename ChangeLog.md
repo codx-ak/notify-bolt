@@ -2,7 +2,7 @@
 
 ## `v1.0.4` — _Sep 23, 2025_
 
-### ✨ Initial Release
+### ✨ New Release
 
 - Introduced **Notify Bolt** – a customizable, promise-based modal notification system for React.
 - Core features:
