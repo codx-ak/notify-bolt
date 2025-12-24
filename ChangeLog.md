@@ -1,5 +1,12 @@
 # 📦 Changelog
 
+## `v1.0.5` — _Dec 24, 2025_
+
+### ✨ Bug Fixes
+
+- Fixed dismiss to removed console error.
+- Fixed Focus issue.
+
 ## `v1.0.4` — _Sep 23, 2025_
 
 ### ✨ New Release

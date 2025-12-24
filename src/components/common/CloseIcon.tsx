@@ -5,6 +5,13 @@ import IconClose from '../../assets/CloseIcon';
 const CloseIcon = ({ modal }: { modal: NotifyProps }) => {
   const handleClose = () => modal.reject?.();
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleClose();
+    }
+  };
+
   // Case 1: Icon is a string
   if (typeof modal.closeIcon === 'string') {
     const isURL = modal.closeIcon.startsWith('http://') || modal.closeIcon.startsWith('https://');
@@ -15,6 +22,7 @@ const CloseIcon = ({ modal }: { modal: NotifyProps }) => {
         alt="close"
         className="notify-cancel-icon"
         onClick={handleClose}
+        onKeyDown={handleKeyDown}
         role="button"
         tabIndex={0}
       />
@@ -22,6 +30,7 @@ const CloseIcon = ({ modal }: { modal: NotifyProps }) => {
       <div
         className="notify-cancel-icon"
         onClick={handleClose}
+        onKeyDown={handleKeyDown}
         role="button"
         tabIndex={0}
         aria-label="Close"
@@ -37,6 +46,7 @@ const CloseIcon = ({ modal }: { modal: NotifyProps }) => {
       <div
         className="notify-cancel-icon"
         onClick={handleClose}
+        onKeyDown={handleKeyDown}
         role="button"
         tabIndex={0}
         aria-label="Close"
@@ -51,6 +61,7 @@ const CloseIcon = ({ modal }: { modal: NotifyProps }) => {
     <div
       className="notify-cancel-icon"
       onClick={handleClose}
+      onKeyDown={handleKeyDown}
       role="button"
       tabIndex={0}
       aria-label="Close"

@@ -29,7 +29,7 @@ export const showNotify = (props: NotifyOptions): Promise<'confirm' | 'deny'> =>
     root = createRoot(container);
   }
 
-  return new Promise((resolve, reject) => {
+  const promise = new Promise<'confirm' | 'deny'>((resolve, reject) => {
     let autoHideTimeout: ReturnType<typeof setTimeout> | undefined;
 
     /**
@@ -103,4 +103,9 @@ export const showNotify = (props: NotifyOptions): Promise<'confirm' | 'deny'> =>
         />
       );
   });
+
+  // Suppress "Uncaught (in promise)" error in console for dismissals
+  promise.catch(() => {});
+
+  return promise;
 };
